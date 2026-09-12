@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>میلی — کانسپت آبسیدین با سرمه‌ای برند</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* Yekan Bakh Variable — brand font (local, weight axis 100–950) */
+@font-face{
+  font-family:'Yekan Bakh';
+  src:url('../../assets/fonts/YekanBakh-VF.ttf') format('truetype-variations');
+  font-weight:100 950;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* =========================================================
+   EMERALD EDITORIAL — DESIGN TOKENS (variations/v3/DESIGN.md)
+   Seed: طلایی/برنز (هم‌راستا با هویت طلای دیجیتال محصول)
+   ========================================================= */
+:root{
+  /* --- Emerald Editorial light, brand-anchored (variations/v3/DESIGN.md) --- */
+  --md-primary:#021065;
+  --md-on-primary:#FFFFFF;
+  --md-primary-container:#D9E2FF;
+  --md-on-primary-container:#021065;
+
+  --md-secondary:#FFB100;
+  --md-on-secondary:#021065;
+  --md-secondary-container:#FFE3A6;
+  --md-on-secondary-container:#4A3500;
+
+  --md-tertiary:#1430B0;
+  --md-on-tertiary:#FFFFFF;
+  --md-tertiary-container:#DEE5FF;
+  --md-on-tertiary-container:#021065;
+
+  --md-error:#BA1A1A;
+  --md-on-error:#FFFFFF;
+  --md-error-container:#FFDAD6;
+  --md-on-error-container:#410002;
+
+  --md-background:#F3F5FA;
+  --md-on-background:#191C22;
+  --md-surface:#FFFFFF;
+  --md-on-surface:#191C22;
+  --md-surface-variant:#E5E9F4;
+  --md-on-surface-variant:#4A5568;
+  --md-outline:#9AA0B0;
+  --md-outline-variant:#CBD5E8;
+
+  --md-surface-container-lowest:#FFFFFF;
+  --md-surface-container-low:#F2F4F9;
+  --md-surface-container:#EAEFF9;
+  --md-surface-container-high:#E1E8F5;
+  --md-surface-container-highest:#D8E1F2;
+
+  --md-inverse-surface:#101828;
+  --md-inverse-on-surface:#EAF0FF;
+  --md-inverse-primary:#B7C1FF;
+
+  --md-fill:#EEF2FA;
+
+  /* --- shape scale (v3: generously rounded, friendly) --- */
+  --shape-xs:8px; --shape-sm:12px; --shape-md:20px; --shape-lg:26px; --shape-xl:32px; --shape-full:999px;
+
+  /* --- elevation (whisper-soft green-tinted shadows) --- */
+  --el1:0 1px 2px rgba(2,16,101,.10), 0 1px 3px 1px rgba(2,16,101,.08);
+  --el2:0 6px 20px -6px rgba(2,16,101,.18);
+  --el3:0 16px 44px -14px rgba(2,16,101,.28);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:'Yekan Bakh','IBM Plex Sans',sans-serif; background:var(--md-background); color:var(--md-on-background); -webkit-font-smoothing:antialiased;}
+bdi{unicode-bidi:isolate;}
+button{font-family:inherit;}
+
+/* type scale */
+.display-s{font-size:34px; line-height:42px; font-weight:400; letter-spacing:0;}
+.headline-s{font-size:22px; line-height:30px; font-weight:400;}
+.title-l{font-size:20px; line-height:26px; font-weight:500;}
+.title-m{font-size:15px; line-height:22px; font-weight:500;}
+.title-s{font-size:13px; line-height:18px; font-weight:600;}
+.body-l{font-size:15px; line-height:22px; font-weight:400;}
+.body-m{font-size:13.5px; line-height:19px; font-weight:400;}
+.body-s{font-size:12px; line-height:16px; font-weight:400;}
+.label-l{font-size:13.5px; line-height:19px; font-weight:600;}
+.label-m{font-size:11.5px; line-height:15px; font-weight:600;}
+.label-s{font-size:10.5px; line-height:14px; font-weight:600;}
+
+/* state layer (press/hover feedback, M3 pattern) */
+.state{position:relative; overflow:hidden; isolation:isolate;}
+.state::after{content:"";position:absolute; inset:0; background:currentColor; opacity:0; transition:opacity .12s; border-radius:inherit; pointer-events:none;}
+.state:active::after{opacity:.12;}
+@media (hover:hover){ .state:hover::after{opacity:.08;} }
+
+/* =========================== page chrome =========================== */
+.page{max-width:1180px; margin:0 auto; padding:24px; min-height:100vh; display:flex; align-items:center; justify-content:center;}
+
+
+.stage{display:flex; gap:44px; align-items:center; justify-content:center; flex-wrap:wrap; width:100%;}
+
+/* =========================== phone frame =========================== */
+.phone{width:378px; height:812px; flex-shrink:0; background:var(--md-surface-container-highest); border:1px solid var(--md-outline-variant); border-radius:40px; padding:12px; box-shadow:0 28px 60px -24px rgba(2,16,101,.32);}
+.phone::before{content:""; position:absolute;}
+.screen{position:relative; width:100%; height:100%; background:var(--md-surface); border-radius:28px; overflow:hidden; display:flex; flex-direction:column;}
+.status-bar{display:flex; align-items:center; justify-content:space-between; padding:14px 24px 4px; font-size:12.5px; font-weight:600; color:var(--md-on-surface); flex-shrink:0; background:color-mix(in srgb, var(--md-surface) 75%, transparent); -webkit-backdrop-filter:blur(18px) saturate(1.4); backdrop-filter:blur(18px) saturate(1.4); position:relative; z-index:30;}
+.status-bar .icons{display:flex; gap:5px; align-items:center;}
+
+/* =========================== M3 top app bar =========================== */
+.topbar{display:flex; align-items:center; justify-content:space-between; padding:10px 12px 12px; background:color-mix(in srgb, var(--md-surface) 75%, transparent); -webkit-backdrop-filter:blur(18px) saturate(1.4); backdrop-filter:blur(18px) saturate(1.4); position:sticky; top:0; z-index:20;}
+.account-switch{display:flex; align-items:center; gap:6px; cursor:pointer; padding:8px 10px; border-radius:var(--shape-sm);}
+.account-switch .name{font-size:17px; font-weight:500; color:var(--md-on-surface);}
+.account-switch .icon{width:18px; height:18px; color:var(--md-on-surface-variant);}
+.topbar-icons{display:flex; align-items:center; gap:2px;}
+.icon-btn{width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--md-on-surface-variant); cursor:pointer; position:relative;}
+.icon-btn .icon{width:22px; height:22px;}
+.icon-btn .badge{position:absolute; top:7px; left:8px; width:8px; height:8px; border-radius:50%; background:var(--md-error); border:2px solid var(--md-surface);}
+
+/* =========================== app screens =========================== */
+.app-screen{display:none; flex:1; overflow-y:auto; padding:0 0 96px; scrollbar-width:none;}
+.app-screen::-webkit-scrollbar{display:none;}
+.app-screen.active{display:block;}
+
+.balance-block{padding:8px 20px 16px; text-align:center;}
+.balance-label{font-size:12.5px; color:var(--md-on-surface-variant); font-weight:700; display:flex; align-items:center; justify-content:center; gap:6px;}
+.balance-figure{margin:4px 0 2px; font-weight:700; background:linear-gradient(180deg,#2B58FF 0%,var(--md-primary) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;}
+.balance-figure .unit{font-size:14px; font-weight:500; color:var(--md-on-surface-variant); margin-inline-start:7px;}
+.balance-caption{font-size:11.5px; color:var(--md-outline);}
+
+/* M3 filled tonal icon buttons — quick actions */
+.actions-row{display:flex; justify-content:space-between; padding:0 12px 14px; gap:2px;}
+.action-btn{display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; color:var(--md-on-surface); flex:1; position:relative; padding:12px 4px 8px; border-radius:var(--shape-lg);}
+.action-btn .circle{width:52px; height:52px; border-radius:50%; border:1.5px solid transparent; background:linear-gradient(180deg,rgba(255,255,255,0) 0%,var(--md-fill) 100%) padding-box, linear-gradient(180deg,rgba(255,177,0,.5) 0%,rgba(255,177,0,0) 100%) border-box; color:var(--md-primary); display:flex; align-items:center; justify-content:center; transition:background .15s, border-color .15s;}
+.action-btn .icon{width:25px; height:25px;}
+.action-btn span.lbl{font-size:11px; font-weight:600; color:var(--md-on-surface-variant);}
+
+.list-head{display:flex; align-items:center; justify-content:space-between; padding:22px 20px 6px;}
+.list-head h3{margin:0; color:var(--md-on-surface-variant);}
+
+/* M3 list item */
+.asset-row{display:flex; align-items:center; gap:13px; padding:11px 20px; cursor:pointer; background:none; border:none; width:100%; text-align:right; color:var(--md-on-surface);}
+.asset-row .avatar{width:40px; height:40px; border-radius:var(--shape-lg); background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.asset-row .avatar .icon{width:19px; height:19px;}
+.asset-row .avatar .glyph{font-size:15px; font-weight:700; line-height:1; letter-spacing:-.02em;}
+.asset-row .avatar.logo{background:none !important;}
+.asset-row .avatar.logo .icon{width:40px; height:40px;}
+.asset-row .meta{flex:1; min-width:0;}
+.asset-row .meta .name{color:var(--md-on-surface);}
+.asset-row .meta .sub{margin-top:1px; display:flex; align-items:center; gap:6px;}
+.asset-row .amounts{display:flex; flex-direction:column; align-items:flex-end; text-align:left;}
+.asset-row .amounts .toman{color:var(--md-on-surface);}
+.asset-row .amounts .toman .cur{font-size:11px; font-weight:500; color:var(--md-on-surface-variant); margin-inline-start:4px;}
+.asset-row .amounts .unit{color:var(--md-on-surface-variant); margin-top:1px;}
+.row-div{height:1px; background:var(--md-outline-variant); margin:0 20px;}
+
+/* M3 chip — category tag (replaces the old liquidity-speed tag) */
+.chip{display:inline-flex; align-items:center; padding:2px 9px; border-radius:var(--shape-sm); font-weight:600;}
+.chip.tag{background:var(--md-surface-container-highest); color:var(--md-on-surface-variant);}
+
+.debt-row{display:flex; align-items:center; gap:13px; padding:11px 20px; border-bottom:1px solid var(--md-outline-variant);}
+.debt-row:last-child{border-bottom:none;}
+.debts-card{margin:4px 20px 8px; border:1px solid var(--md-outline-variant); border-radius:var(--shape-md); overflow:hidden;}
+.debt-row .avatar{width:40px; height:40px; border-radius:var(--shape-lg); background:var(--md-error-container); color:var(--md-on-error-container); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.debt-row .avatar .icon{width:18px; height:18px;}
+.debt-row .meta{flex:1; display:flex; flex-direction:column;}
+.debt-row .meta .name{color:var(--md-on-surface);}
+.debt-row .meta .sub{color:var(--md-on-surface-variant); margin-top:1px;}
+.debt-row .amount{color:var(--md-error); font-weight:600;}
+.debt-row .amount .cur{font-size:11px; font-weight:500; margin-inline-start:4px;}
+
+.outapp-section{margin-top:8px; padding:14px 0 6px; background:var(--md-surface-container-low); border-top:1px solid var(--md-outline-variant); border-bottom:1px solid var(--md-outline-variant);}
+.outapp-title{display:flex; align-items:center; gap:8px; padding:0 20px 8px; color:var(--md-on-surface-variant);}
+.outapp-title .icon{width:15px; height:15px; color:var(--md-primary);}
+
+/* M3 filled card — banners */
+.banners{padding:18px 20px 4px; display:flex; flex-direction:column; gap:10px; position:relative;}
+.banner{border-radius:var(--shape-md); padding:16px; position:relative;}
+.banner.b1{background:var(--md-primary-container); color:var(--md-on-primary-container);}
+.banner.b2{background:var(--md-tertiary-container); color:var(--md-on-tertiary-container);}
+.banner .t1{margin-bottom:3px;}
+.banner .t2{opacity:.85;}
+
+/* =========================== card tab (single-card swipeable carousel) =========================== */
+.card-carousel-wrap{overflow:hidden; overflow-x:clip; overflow-y:visible; touch-action:pan-y;}
+.card-stage{position:relative;}
+.card-nav-btn{position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:var(--md-surface-container-high); color:var(--md-on-surface-variant); display:flex; align-items:center; justify-content:center; border:none; cursor:pointer; box-shadow:var(--el1); z-index:5;}
+.card-nav-btn .icon{width:16px; height:16px;}
+.card-nav-btn.prev{right:6px;}
+.card-nav-btn.next{left:6px;}
+.card-nav-btn.disabled{opacity:.32; pointer-events:none;}
+.card-carousel{display:flex; direction:ltr; transition:transform .28s cubic-bezier(.2,.7,.3,1);}
+.card-slide{flex:0 0 100%; padding:0 20px; direction:rtl;}
+.card-visual{border-radius:var(--shape-md); padding:22px; height:170px; background:linear-gradient(135deg,#021065 0%,#0A1B6E 60%,#1533B0 130%); color:#FFFFFF; position:relative; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 12px 30px -10px rgba(2,16,101,.5); border:1px solid rgba(255,255,255,.14); user-select:none;}
+.card-visual .row1{display:flex; justify-content:space-between; align-items:flex-start;}
+.card-visual .brand{color:#FFE3A6;}
+.card-visual .card-logo{width:28px; height:28px; color:#FFE3A6; flex-shrink:0;}
+.card-visual .num{letter-spacing:.12em; font-weight:500; color:#FFFFFF;}
+.card-visual .row3{display:flex; justify-content:space-between; opacity:.85; color:#FFFFFF;}
+.card-visual.gold{background:linear-gradient(135deg,#FFE3A6,#FFB100 60%,#C07F00); color:#021065;}
+.card-visual.gold .brand{color:#021065;}
+.card-visual.gold .card-logo{color:#021065;}
+.card-visual.gold .num{color:#021065;}
+.card-visual.gold .row3{color:#021065;}
+
+.card-dots{display:flex; justify-content:center; align-items:center; gap:6px; padding:12px 0 2px;}
+.dot{width:6px; height:6px; border-radius:var(--shape-full); background:var(--md-outline-variant); cursor:pointer; transition:all .18s;}
+.dot.active{width:20px; background:var(--md-primary);}
+
+.card-actions{display:flex; gap:10px; padding:14px 20px 6px;}
+.btn-tonal{flex:1; display:flex; align-items:center; justify-content:center; gap:7px; padding:11px 8px; border-radius:var(--shape-full); background:var(--md-secondary-container); color:var(--md-on-secondary-container); cursor:pointer; border:none;}
+.btn-tonal .icon{width:16px; height:16px;}
+
+.subhead{padding:22px 20px 6px; display:flex; align-items:center; gap:8px; color:var(--md-on-surface-variant);}
+.linked-note{margin:12px 20px 0; color:var(--md-on-surface-variant); line-height:1.85; padding:14px; background:var(--md-surface-container-low); border-radius:var(--shape-md); display:none;}
+.linked-note.show{display:block;}
+
+/* =========================== services tab =========================== */
+
+
+.mini-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:6px 14px; padding:6px 14px;}
+.mini-app{display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; background:none; border:none; padding:16px 6px 12px; border-radius:var(--shape-lg);}
+.mini-app .box{width:52px; height:52px; border-radius:42px; corner-shape:squircle; background:linear-gradient(180deg,#1430B0 0%,var(--md-primary) 100%); color:#FFB100; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px -6px rgba(2,16,101,.45);}
+.mini-app .box .icon{width:28px; height:28px;}
+.mini-app .box .icon .duo-w{stroke:#FFFFFF;}
+.mini-app .box .icon .duo-wf{fill:#FFFFFF;}
+.mini-app span.lbl{color:var(--md-on-surface); text-align:center;}
+.mini-app.soon .box{background:none; border:1.5px dashed var(--md-outline-variant); color:var(--md-outline);}
+.mini-app.soon span.lbl{color:var(--md-outline);}
+
+/* =========================== market tab =========================== */
+.mkt-carousel{display:flex; gap:10px; padding:2px 20px 6px; overflow-x:auto;}
+.app-screen[data-screen="market"] .mkt-toptraded-head{padding-top:4px;}
+.app-screen[data-screen="market"] .mkt-carousel{padding-bottom:14px;}
+.app-screen[data-screen="market"] .mkt-filter-row{padding-top:18px;}
+
+.mkt-top-card{flex:0 0 152px; background:var(--md-background); border:1px solid var(--md-outline-variant); border-radius:var(--shape-md); padding:13px 13px 58px; display:flex; flex-direction:column; gap:5px; cursor:pointer; overflow:hidden; position:relative;}
+.mkt-top-card .price-block{display:flex; flex-direction:column; gap:2px;}
+.mkt-top-card .row1{display:flex; align-items:center; justify-content:flex-start; gap:6px;}
+.mkt-top-card .name{font-size:12px; font-weight:700; color:var(--md-on-surface-variant); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.mkt-top-avatar .avatar{width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--md-primary-container); color:var(--md-on-primary-container); flex-shrink:0;}
+.mkt-top-avatar .avatar .icon{width:13px; height:13px;}
+.mkt-top-avatar .avatar.logo .icon{width:24px; height:24px;}
+.mkt-top-avatar .avatar .glyph{font-size:9px;}
+.mkt-top-card .price{font-size:16.5px; font-weight:800; color:var(--md-on-surface); text-align:left;}
+.mkt-top-card .pct{display:inline-flex; align-items:center; justify-content:flex-end; gap:3px; font-size:12px; font-weight:700;}
+.mkt-top-card .pct .icon{width:11px; height:11px;}
+.mkt-top-card .pct.up{color:var(--md-tertiary);}
+.mkt-top-card .pct.down{color:var(--md-error);}
+.mkt-top-card .chart-wrap{position:absolute; left:-1px; right:-1px; bottom:-1px; line-height:0; display:block; width:auto; height:56px; padding:0;}
+.mkt-top-card .chart-wrap svg{display:block; width:100%; height:100%; overflow:visible;}
+
+
+.mkt-filter-row{display:flex; gap:8px; padding:12px 20px 10px; overflow-x:auto;}
+.mkt-filter-chip{display:flex; align-items:center; gap:5px; padding:8px 14px; border-radius:var(--shape-full); border:1px solid var(--md-outline-variant); background:none; color:var(--md-on-surface-variant); font-size:12.5px; font-weight:600; cursor:pointer; white-space:nowrap; flex-shrink:0;}
+.mkt-filter-chip .icon{width:13px; height:13px; transition:transform .15s;}
+.mkt-filter-chip .icon.flipped{transform:rotate(180deg);}
+
+.mkt-list-row{display:flex; align-items:center; gap:12px; padding:12px 20px; cursor:pointer; width:100%; background:none; border:none; text-align:right;}
+.mkt-list-avatar .avatar{width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--md-primary-container); color:var(--md-on-primary-container); flex-shrink:0;}
+.mkt-list-avatar .avatar .icon{width:20px; height:20px;}
+.mkt-list-avatar .avatar.logo .icon{width:40px; height:40px;}
+.mkt-list-avatar .avatar .glyph{font-size:13px;}
+.mkt-list-row .meta{flex:1; min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:0;}
+.mkt-list-row .meta .name{font-size:14px; font-weight:700; color:var(--md-on-surface); display:block;}
+.mkt-list-row .meta .sub{font-size:11px; color:var(--md-on-surface-variant); margin-top:2px; display:block;}
+.mkt-list-row .right{display:flex; flex-direction:column; align-items:flex-end; gap:4px;}
+.mkt-list-row .right .price{font-size:13.5px; font-weight:700; color:var(--md-on-surface);}
+.mkt-list-row .right .chart-pct{display:flex; align-items:center; gap:6px;}
+.mkt-list-row .right .chart-pct .pct{font-size:11.5px; font-weight:700;}
+.mkt-list-row .right .chart-pct .pct.up{color:var(--md-tertiary);}
+.mkt-list-row .right .chart-pct .pct.down{color:var(--md-error);}
+
+/* =========================== profile tab =========================== */
+.profile-head{padding:26px 20px 18px; display:flex; align-items:center; gap:14px;}
+.profile-avatar{width:56px; height:56px; border-radius:50%; background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; font-weight:600; font-size:18px;}
+.profile-avatar .icon{width:26px; height:26px;}
+.profile-head .name{color:var(--md-on-surface);}
+.profile-head .sub{color:var(--md-on-surface-variant); margin-top:2px;}
+
+.plist-row{display:flex; align-items:center; gap:14px; padding:14px 20px; cursor:pointer;}
+.plist-row .avatar{width:40px; height:40px; border-radius:50%; background:var(--md-fill); display:flex; align-items:center; justify-content:center;}
+.plist-row .avatar .icon{width:18px; height:18px; color:var(--md-primary);}
+.plist-row .name{flex:1; color:var(--md-on-surface);}
+.plist-row .chev{width:14px; height:14px; color:var(--md-outline);}
+.plist-divider{height:8px; background:var(--md-surface-container-low); margin:6px 0;}
+.plist-row.logout .avatar{background:var(--md-error-container); color:var(--md-error);}
+.plist-row.logout .avatar .icon{color:var(--md-error);}
+.plist-row.logout .name{color:var(--md-error); font-weight:600;}
+
+/* =========================== M3 nav bar =========================== */
+.tabbar{display:flex; background:color-mix(in srgb, var(--md-surface) 65%, transparent); -webkit-backdrop-filter:blur(22px) saturate(1.6); backdrop-filter:blur(22px) saturate(1.6); border-top:1px solid color-mix(in srgb, var(--md-outline-variant) 60%, transparent); flex-shrink:0; padding:10px 8px calc(10px + env(safe-area-inset-bottom,0px)); position:absolute; left:0; right:0; bottom:0; z-index:20; box-shadow:0 -12px 32px -16px rgba(2,16,101,.25);}
+.tab{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:none; border:none; cursor:pointer; color:var(--md-on-surface-variant); padding:2px 0;}
+.tab .nav-indicator{width:56px; height:30px; border-radius:var(--shape-full); display:flex; align-items:center; justify-content:center; color:var(--md-on-surface-variant); position:relative;}
+.tab .icon{width:22px; height:22px;}
+.tab .icon-filled{display:none; position:absolute;}
+.tab.active .nav-indicator{color:var(--md-primary);}
+.tab.active .icon-outline{display:none;}
+.tab.active .icon-filled{display:block;}
+.tab.active span.lbl{color:var(--md-on-surface); font-weight:700;}
+.tab span.lbl{margin-top:1px; font-size:10.5px; line-height:1; font-weight:600; color:var(--md-on-surface-variant);}
+
+
+
+/* =========================== overlays =========================== */
+.overlay{position:absolute; inset:0; background:var(--md-surface); z-index:50; display:flex; flex-direction:column; transform:translateY(16px); opacity:0; pointer-events:none; transition:transform .18s ease, opacity .18s ease;}
+.overlay.show{transform:translateY(0); opacity:1; pointer-events:auto;}
+.overlay-head{display:flex; align-items:center; gap:6px; padding:14px 8px 12px; flex-shrink:0; background:var(--md-surface);}
+.back-btn{width:40px; height:40px; border-radius:50%; background:none; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--md-on-surface); flex-shrink:0;}
+.star-btn{width:40px; height:40px; border-radius:50%; background:none; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--md-on-surface-variant); flex-shrink:0; position:relative;}
+.star-btn .icon{width:20px; height:20px;}
+.star-btn .icon-filled{display:none; position:absolute;}
+.star-btn.active{color:#FFB100;}
+.star-btn.active .icon-outline{display:none;}
+.star-btn.active .icon-filled{display:block;}
+.back-btn .icon{width:18px; height:18px;}
+.overlay-head h4{margin:0; color:var(--md-on-surface); font-weight:500;}
+.overlay-body{flex:1; overflow-y:auto; padding-bottom:20px;}
+
+.detail-balance{padding:6px 20px 18px; text-align:center;}
+.detail-balance .amt{color:var(--md-on-surface);}
+.detail-balance .eq{color:var(--md-on-surface-variant); margin-top:4px;}
+.chart-wrap{padding:0 20px 8px;}
+.alt-wrap{margin:6px 20px 10px; padding:18px; border-radius:var(--shape-md); background:var(--md-surface-container-low); text-align:center; color:var(--md-on-surface-variant); line-height:1.85;}
+.pnl-card{margin:6px 20px 14px; padding:14px 16px; border-radius:var(--shape-md); border:1px solid var(--md-outline-variant); display:flex; align-items:center; justify-content:space-between;}
+.pnl-label{color:var(--md-on-surface-variant);}
+.pnl-value-row{display:flex; align-items:center; gap:8px;}
+.pnl-amount{color:var(--md-on-surface);}
+.pnl-percent{display:inline-flex; align-items:center; gap:3px; font-weight:700; padding:3px 9px; border-radius:var(--shape-full);}
+.pnl-percent .icon{width:12px; height:12px;}
+.pnl-percent.up{color:var(--md-tertiary); background:var(--md-tertiary-container);}
+.pnl-percent.down{color:var(--md-error); background:var(--md-error-container);}
+.hist-mini-head{padding:16px 20px 8px; color:var(--md-on-surface-variant);}
+.hist-row{display:flex; justify-content:space-between; padding:10px 20px; border-bottom:1px solid var(--md-outline-variant);}
+.hist-row:last-child{border-bottom:none;}
+.hist-row .l{color:var(--md-on-surface);}
+.hist-row .r{color:var(--md-on-surface-variant);}
+.tx-amt{display:inline-flex; align-items:center; gap:4px; font-weight:600;}
+.tx-amt .icon{width:13px; height:13px; flex-shrink:0;}
+.tx-amt.in{color:var(--md-tertiary);}
+.tx-amt.out{color:var(--md-error);}
+
+/* M3 buttons (filled / outlined) — used in bottom action bars */
+.float-actions{position:absolute; left:14px; right:14px; bottom:16px; display:flex; gap:8px;}
+.btn{flex:1; padding:13px 8px; border-radius:var(--shape-full); text-align:center; font-weight:600; cursor:pointer; border:none;}
+.btn-filled{background:var(--md-primary); color:var(--md-on-primary);}
+.btn-outlined{background:none; border:1px solid var(--md-outline); color:var(--md-primary);}
+
+.nav-island{position:absolute; left:14px; right:14px; bottom:14px; background:var(--md-surface-container-high); border-radius:var(--shape-xl); box-shadow:var(--el2); padding:8px 4px; display:flex; justify-content:space-around; align-items:center;}
+.nav-island-item{display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:none; cursor:pointer; color:var(--md-on-surface-variant); flex:1; padding:7px 2px; border-radius:var(--shape-md);}
+.nav-island-item .icon{width:21px; height:21px;}
+.nav-island-item span{font-size:10.5px; font-weight:600;}
+.nav-island-item.primary{color:var(--md-primary);}
+
+.stub-icon{width:60px; height:60px; border-radius:var(--shape-lg); background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; margin:22px auto 14px;}
+.stub-icon .icon{width:25px; height:25px;}
+.stub-body{padding:0 26px; text-align:center;}
+.stub-body h5{margin:0 0 10px; color:var(--md-on-surface); font-weight:600;}
+.stub-body p{color:var(--md-on-surface-variant); line-height:1.9; margin:0 0 16px;}
+.stub-flag{display:inline-flex; align-items:center; gap:6px; font-weight:700; padding:6px 13px; border-radius:var(--shape-full); background:var(--md-error-container); color:var(--md-on-error-container);}
+
+.convert-box{margin:10px 20px; padding:6px 16px; border-radius:var(--shape-md); background:var(--md-surface-container-low);}
+.convert-field{display:flex; justify-content:space-between; align-items:center; padding:13px 0;}
+.convert-field .lbl{color:var(--md-on-surface-variant); margin-bottom:4px;}
+.convert-field .val{color:var(--md-on-surface); font-weight:500;}
+.convert-mid{display:flex; justify-content:center; padding:2px 0;}
+.convert-mid .icon{width:18px; height:18px; color:var(--md-tertiary);}
+.divider-line{height:1px; background:var(--md-outline-variant);}
+
+.qr-box{width:190px; height:190px; margin:30px auto 18px; border-radius:var(--shape-xl); border:2px dashed var(--md-outline); display:flex; align-items:center; justify-content:center;}
+
+.recv-qr-wrap{display:flex; justify-content:center; padding:22px 20px 8px;}
+.recv-qr-wrap svg{border-radius:var(--shape-md); box-shadow:var(--el1);}
+.recv-value-block{padding:14px 20px 4px; text-align:center;}
+.recv-value-label{color:var(--md-on-surface-variant); margin-bottom:8px;}
+.recv-value-row{display:inline-flex; align-items:center; gap:8px; background:var(--md-surface-container-low); border-radius:var(--shape-full); padding:9px 10px 9px 16px; max-width:100%;}
+.recv-value-text{color:var(--md-on-surface); word-break:break-all; font-size:12.5px;}
+.recv-copy-btn{width:30px; height:30px; border-radius:50%; background:var(--md-primary-container); color:var(--md-on-primary-container); border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;}
+.recv-copy-btn .icon{width:15px; height:15px;}
+
+.search-box{display:flex; align-items:center; gap:8px; background:var(--md-surface-container-high); border-radius:var(--shape-full); padding:11px 16px;}
+.search-box .icon{width:18px; height:18px; color:var(--md-on-surface-variant); flex-shrink:0;}
+.search-box input{border:none; background:none; outline:none; flex:1; font-family:inherit; font-size:13.5px; color:var(--md-on-surface); min-width:0;}
+.search-box input::placeholder{color:var(--md-outline);}
+.filter-tabs{display:flex; gap:8px; padding:2px 20px 14px; overflow-x:auto;}
+.filter-chip{flex-shrink:0; padding:7px 16px; border-radius:var(--shape-full); border:1px solid var(--md-outline-variant); background:none; color:var(--md-on-surface-variant); font-size:12.5px; font-weight:600; cursor:pointer; white-space:nowrap;}
+.filter-chip.active{background:var(--md-primary); color:var(--md-on-primary); border-color:var(--md-primary);}
+
+/* =========================== buy/sell screen =========================== */
+.bs-tabs-inline{flex:1; display:flex; justify-content:center; gap:8px;}
+.bs-asset-card{width:calc(100% - 40px); margin:16px 20px 0; padding:12px 14px; border-radius:var(--shape-md); background:var(--md-fill); border:none; display:flex; align-items:center; justify-content:space-between; cursor:pointer;}
+.bs-asset-card .icon{width:16px; height:16px; color:var(--md-outline);}
+.bs-asset-left{display:flex; align-items:center; gap:10px;}
+.bs-asset-avatar .avatar{width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--md-primary-container); color:var(--md-on-primary-container);}
+.bs-asset-avatar .avatar .icon{width:17px; height:17px;}
+.bs-asset-avatar .avatar.logo .icon{width:32px; height:32px;}
+.bs-asset-avatar .avatar .glyph{font-size:11px;}
+.bs-asset-name{color:var(--md-on-surface);}
+.bs-amount-block{padding:26px 20px; text-align:center;}
+.bs-amount-label{color:var(--md-on-surface-variant); margin-bottom:8px;}
+.bs-amount-display{font-size:30px; font-weight:700; color:var(--md-on-surface);}
+.bs-amount-display .unit{font-size:14px; font-weight:500; color:var(--md-on-surface-variant); margin-right:6px;}
+.bs-keypad{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:4px 20px;}
+.bs-key{padding:15px 0; border-radius:var(--shape-md); background:var(--md-fill); border:none; font-size:17px; font-weight:600; color:var(--md-on-surface); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+.bs-key .icon{width:19px; height:19px;}
+.bs-confirm-wrap{padding:10px 20px 16px;}
+.send-field-block{padding:14px 20px 4px;}
+.send-field-label{color:var(--md-on-surface-variant); margin-bottom:8px;}
+.send-input{width:100%; padding:13px 14px; border-radius:var(--shape-md); border:1px solid var(--md-outline-variant); background:var(--md-fill); font-family:inherit; font-size:13.5px; color:var(--md-on-surface); outline:none;}
+.send-input::placeholder{color:var(--md-outline);}
+
+.conv-field-card{margin:14px 20px 0; padding:12px 14px; border-radius:var(--shape-md); background:var(--md-fill);}
+.conv-asset-select{width:100%; background:none; border:none; display:flex; align-items:center; justify-content:space-between; cursor:pointer; padding:0 0 10px; border-bottom:1px solid var(--md-outline-variant); margin-bottom:10px;}
+.conv-asset-select .icon{width:16px; height:16px; color:var(--md-outline);}
+.conv-amount-input{width:100%; border:none; background:none; font-family:inherit; font-size:16px; font-weight:700; color:var(--md-on-surface); outline:none; direction:ltr; text-align:left;}
+.conv-amount-input::placeholder{color:var(--md-outline);}
+.conv-amount-display{font-size:16px; font-weight:700; color:var(--md-on-surface-variant); direction:ltr; text-align:left;}
+.conv-swap-row{display:flex; justify-content:center; margin:-4px 0; position:relative; z-index:2;}
+.conv-swap-btn{width:36px; height:36px; border-radius:50%; background:var(--md-primary); color:var(--md-on-primary); border:3px solid var(--md-background); display:flex; align-items:center; justify-content:center; cursor:pointer;}
+.conv-swap-btn .icon{width:17px; height:17px;}
+#bsConfirmBtn{width:100%; display:block;}
+#bsConfirmBtn:disabled{opacity:.4; cursor:not-allowed;}
+.qr-box .icon{width:64px; height:64px; color:var(--md-outline);}
+
+/* =========================== M3 modal bottom sheet =========================== */
+.sheet-backdrop{position:absolute; inset:0; background:rgba(31,27,19,.4); z-index:60; opacity:0; pointer-events:none; transition:opacity .15s;}
+.sheet-backdrop.show{opacity:1; pointer-events:auto;}
+.sheet{position:absolute; left:0; right:0; bottom:0; background:var(--md-surface-container-low); z-index:61; border-radius:var(--shape-xl) var(--shape-xl) 0 0; padding:8px 18px 26px; transform:translateY(100%); transition:transform .2s ease; box-shadow:var(--el3);}
+.sheet.show{transform:translateY(0);}
+.sheet .handle{width:32px; height:4px; border-radius:var(--shape-full); background:var(--md-outline-variant); margin:8px auto 16px;}
+.sheet h4{margin:0 0 12px; color:var(--md-on-surface-variant);}
+.sheet-row{display:flex; align-items:center; gap:13px; padding:12px 6px; cursor:pointer; border-radius:var(--shape-md);}
+.sheet-row .avatar{width:38px; height:38px; border-radius:var(--shape-lg); background:var(--md-tertiary-container); color:var(--md-on-tertiary-container); display:flex; align-items:center; justify-content:center;}
+.sheet-row .avatar .icon{width:17px; height:17px;}
+.sheet-row .name{flex:1; color:var(--md-on-surface);}
+.sheet-row.danger .avatar{background:var(--md-error-container); color:var(--md-error);}
+.sheet-row.danger .name{color:var(--md-error); font-weight:600;}
+.sheet-add{display:flex; align-items:center; gap:13px; padding:13px 6px; cursor:pointer; border-radius:var(--shape-md);}
+.sheet-add .avatar{width:38px; height:38px; border-radius:var(--shape-lg); border:1.5px dashed var(--md-outline); display:flex; align-items:center; justify-content:center; color:var(--md-outline);}
+.sheet-add .avatar .icon{width:15px; height:15px;}
+.sheet-add .name{color:var(--md-on-surface-variant);}
+
+
+
+
+
+/* =========================== home hero slideshow (app banners, 2000x786) =========================== */
+.hero-slideshow{margin:22px 20px 0;}
+.hero-viewport{overflow:hidden; border-radius:var(--shape-md); touch-action:pan-y;}
+.hero-track{display:flex; direction:ltr; transition:transform .35s cubic-bezier(.2,.7,.3,1);}
+.hero-slide{flex:0 0 100%; direction:rtl;}
+.hero-slide img{width:100%; aspect-ratio:2000/786; object-fit:cover; display:block; border-radius:var(--shape-md); background:var(--md-surface-container-low);}
+.hero-dots{display:flex; justify-content:center; align-items:center; gap:6px; padding:10px 0 2px;}
+.hero-dot{width:6px; height:6px; border-radius:var(--shape-full); background:var(--md-outline-variant); border:none; padding:0; cursor:pointer; transition:all .18s;}
+.hero-dot.active{width:20px; background:var(--md-primary);}
+
+/* =========================== v3 dark theme (Milli Obsidian Neutral, OKHCL verified) =========================== */
+body[data-theme="dark"]{
+  color-scheme:dark;
+  --md-primary:#2B58FF;           /* L_ok=0.55: 4.89:1 text, 3.57:1 on dark surface */
+  --md-on-primary:#FFFFFF;
+  --md-primary-container:#021065; /* Brand Navy Container */
+  --md-on-primary-container:#DDE1FF;
+
+  --md-secondary:#FFB100;         /* Milli Gold (L_ok=0.81: 10.30:1 on surface) */
+  --md-on-secondary:#021065;
+  --md-secondary-container:#3D2900;
+  --md-on-secondary-container:#FFE3A6;
+
+  --md-tertiary:#8EA2FF;          /* L_ok=0.77: 9.90:1 contrast */
+  --md-on-tertiary:#021065;
+  --md-tertiary-container:#1B2B9E;
+  --md-on-tertiary-container:#DDE1FF;
+
+  --md-error:#FFB4AB;             /* L_ok=0.84: 11.03:1 contrast */
+  --md-on-error:#410002;
+  --md-error-container:#6E1A1A;
+  --md-on-error-container:#FFDAD6;
+
+  /* Neutral Dark Backgrounds (OKHCL calibrated) */
+  --md-background:#090A0D;        /* Neutral deep charcoal-obsidian */
+  --md-on-background:#F4F5F8;     /* L_ok=0.97: 17.5:1 contrast */
+  --md-surface:#0E1015;           /* L_ok=0.17: neutral matte dark surface */
+  --md-on-surface:#F4F5F8;
+  --md-surface-variant:#161820;   /* Neutral elevated tier */
+  --md-on-surface-variant:#9BA4B8;/* L_ok=0.72: 7.61:1 contrast on surface */
+  --md-outline:#5C667E;           /* L_ok=0.51: 3.31:1 on surface (passes WCAG 3:1) */
+  --md-outline-variant:#2A2E3B;   /* L_ok=0.30: 1.41:1 subtle divider */
+
+  --md-surface-container-lowest:#060709;
+  --md-surface-container-low:#0B0C10;
+  --md-surface-container:#13151D;
+  --md-surface-container-high:#1A1D27;
+  --md-surface-container-highest:#222633;
+
+  --md-inverse-surface:#F4F5F8;
+  --md-inverse-on-surface:#090A0D;
+  --md-inverse-primary:#021065;
+
+  --md-fill:#161820;
+
+  --el1:0 1px 2px rgba(0,0,0,.6), 0 1px 3px 1px rgba(0,0,0,.4);
+  --el2:0 6px 20px -6px rgba(0,0,0,.7), 0 0 0 1px rgba(43,88,255,.3);
+  --el3:0 16px 44px -14px rgba(0,0,0,.85), 0 0 24px -6px rgba(2,16,101,.6);
+}
+body[data-theme="dark"] .phone{box-shadow:0 24px 48px -24px rgba(0,0,0,.6);}
+body[data-theme="dark"] .card-visual{background:linear-gradient(135deg,#021065 0%,#0A1E7A 60%,#1836B5 130%); border:1px solid rgba(255,255,255,.14); box-shadow:0 12px 30px -10px rgba(0,0,0,.8), 0 0 20px -5px rgba(2,16,101,.6);}
+body[data-theme="dark"] .card-visual.gold{background:linear-gradient(135deg,#FFE3A6,#FFB100 60%,#C07F00); color:#021065;}
+body[data-theme="dark"] .card-visual.gold .brand,
+body[data-theme="dark"] .card-visual.gold .card-logo,
+body[data-theme="dark"] .card-visual.gold .num,
+body[data-theme="dark"] .card-visual.gold .row3{color:#021065; opacity:1;}
+body[data-theme="dark"] .card-visual .row3{opacity:1; color:#D6E0FF;}
+body[data-theme="dark"] .tab{color:#8E99B0;}
+body[data-theme="dark"] .tab.active .nav-indicator{background:rgba(43,88,255,.24); color:#BAC8FF;}
+body[data-theme="dark"] .tab.active span.lbl{color:#BAC8FF; font-weight:700;}
+body[data-theme="dark"] .action-btn .circle{background:linear-gradient(180deg,rgba(30,68,214,0) 0%,rgba(30,68,214,.30) 100%) padding-box, linear-gradient(180deg,rgba(255,177,0,.5) 0%,rgba(255,177,0,0) 100%) border-box; color:#BAC8FF;}
+@media (hover:hover){ body[data-theme="dark"] .action-btn:hover .circle{background:linear-gradient(180deg,rgba(30,68,214,0) 0%,rgba(30,68,214,.42) 100%) padding-box, linear-gradient(180deg,rgba(255,177,0,.5) 0%,rgba(255,177,0,0) 100%) border-box;} }
+body[data-theme="dark"] .mini-app .box{background:linear-gradient(180deg,#2B58FF 0%,#021065 100%); color:#FFB100; border:1px solid rgba(43,88,255,.4); box-shadow:none;}
+body[data-theme="dark"] .btn-filled{background:var(--md-primary); color:var(--md-on-primary); border:1px solid rgba(255,255,255,.2);}
+body[data-theme="dark"] .btn-tonal{background:rgba(2,16,101,.85); color:#BAC8FF; border:1px solid rgba(43,88,255,.35);}
+body[data-theme="dark"] .mkt-top-card .pct.up{color:var(--md-tertiary);}
+body[data-theme="dark"] .mkt-top-card .pct.down{color:#FFB4AB;}
+body[data-theme="dark"] .balance-figure{color:#BAC8FF; background:none; -webkit-background-clip:unset; background-clip:unset; -webkit-text-fill-color:currentColor;}
+body[data-theme="dark"] .balance-caption{color:var(--md-on-surface-variant);}
+body[data-theme="dark"] .search-box input::placeholder{color:#78849E;}
+body[data-theme="dark"] .send-input::placeholder{color:#78849E;}
+body[data-theme="dark"] :focus-visible{outline:2px solid var(--md-primary); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="i-home" viewBox="0 0 24 24" fill="currentColor"><path d="M4.3191 4.13246C4.69827 4.16439 5.39659 4.24084 5.87003 4.40868C6.31864 4.56777 6.75398 4.81607 7.15606 5.11736C7.60822 4.77858 8.10617 4.50695 8.62096 4.34529L9.00586 4.24567C9.39297 4.1657 9.78446 4.14048 10.1515 4.14378C11.2653 4.15388 12.315 4.50601 13.1854 5.12641C14.6585 4.0466 16.6083 3.76406 18.3975 4.64868C19.3538 5.12155 20.3422 5.97397 20.8631 7.02602L21.0578 7.4879L21.1642 7.88413C21.2535 8.30111 21.2949 8.77648 21.325 9.25166C21.3701 9.96331 21.4021 10.9624 21.4337 12.3513C21.4452 12.8586 21.4569 13.2726 21.4676 13.6146C21.5269 13.6092 21.5941 13.6053 21.6669 13.6056C21.7664 13.6059 21.9464 13.6119 22.1627 13.6667C22.3635 13.7177 22.7629 13.8513 23.1205 14.2214L23.2948 14.4275C23.6542 14.9137 23.6858 15.4144 23.691 15.5776C23.699 15.8246 23.6598 16.0219 23.6389 16.1165C23.5946 16.3179 23.5292 16.4875 23.4918 16.5784C23.4076 16.7825 23.2998 16.992 23.202 17.1671C23.0186 17.4952 22.7272 17.9587 22.4231 18.2991C21.9654 18.8113 21.4283 19.2706 20.7499 19.5852C20.066 19.9022 19.3692 20.0126 18.6805 20.0176C18.2487 20.0207 17.7972 19.9931 17.3265 19.875C16.8433 19.7537 16.4371 19.5632 16.0654 19.3429C15.9199 19.2566 15.7728 19.1533 15.6239 19.0418C15.2093 19.3512 14.7442 19.6008 14.2269 19.7663C12.5455 20.3041 10.8702 19.9813 9.55604 19.0237C9.32917 19.203 9.08154 19.3777 8.83378 19.5059C8.54102 19.6575 8.15808 19.7977 7.80813 19.8908L7.4753 19.9678C4.34834 20.5466 1.44592 18.0901 1.44592 15.0093C1.44585 14.5309 1.35388 6.67901 1.38705 6.04565C1.45216 4.81096 2.47728 4.35169 2.57572 4.3068C2.82813 4.19153 3.05152 4.1523 3.13043 4.13925C3.32365 4.10737 3.50257 4.10186 3.60137 4.10076C3.82919 4.09824 4.08748 4.11297 4.3191 4.13246ZM5.19759 6.30376C4.80604 6.16498 3.40082 6.04674 3.39534 6.15206C3.36565 6.72233 3.45642 14.4085 3.45647 15.0093C3.45647 16.8286 5.21358 18.3414 7.10852 17.9912C7.34881 17.9468 7.71002 17.8253 7.91002 17.7218C8.354 17.492 9.20036 16.6829 9.35227 16.3429C9.41292 16.2065 9.49255 16.0925 9.52887 16.0916C9.56609 16.0925 9.69988 16.2502 9.82774 16.4425C10.7142 17.776 12.1656 18.3148 13.6156 17.8508C14.342 17.6182 14.9462 17.0887 15.3703 16.3135L15.5696 15.949L15.796 16.3339C16.052 16.77 16.6248 17.3368 17.0911 17.6131C17.605 17.9177 17.9863 18.012 18.6669 18.0071C19.6228 17.9999 20.2584 17.7059 20.9243 16.961C21.2424 16.605 21.7492 15.6966 21.6737 15.6184C21.6542 15.6 21.4813 15.6584 21.2888 15.7497C20.7971 15.9829 20.2552 15.9841 19.9167 15.752C19.5144 15.476 19.4894 15.3114 19.4231 12.3965C19.3602 9.62427 19.2922 8.54562 19.1537 8.13771C18.9421 7.51644 18.2721 6.83004 17.5054 6.45093C16.0734 5.74338 14.4052 6.25915 13.4843 7.69394C13.3312 7.93248 13.1962 8.12955 13.1809 8.13544C13.1692 8.13544 13.0631 7.97058 12.9454 7.77092C12.3535 6.76641 11.3066 6.165 10.1334 6.15433C9.76842 6.15105 9.46318 6.18761 9.22321 6.26301C8.52761 6.48145 7.78671 7.1045 7.4187 7.77998C7.31237 7.97507 7.20352 8.13544 7.17644 8.13544C7.14923 8.13531 7.05682 8.00956 6.9704 7.85696C6.5869 7.17892 5.85263 6.53594 5.19759 6.30376ZM13.5613 8.36865C13.9591 8.19128 14.4096 8.18783 14.7432 8.36186C14.9676 8.47923 15.2045 8.79119 15.282 9.06827C15.3806 9.42081 15.4716 12.0467 15.4518 13.9746L15.436 15.6795L15.1937 15.8018C15.0395 15.8797 14.8176 15.9257 14.5756 15.9286C14.2495 15.9324 14.1602 15.9062 13.9371 15.7429C13.4542 15.3895 13.4397 15.3216 13.387 13.1301C13.3614 12.0672 13.3393 10.5837 13.3371 9.83354L13.3326 8.47054L13.5613 8.36865ZM8.24285 8.23054C8.44444 8.24981 8.62897 8.31893 8.79077 8.43657C8.92504 8.53426 9.10219 8.73673 9.18246 8.88714C9.3194 9.14387 9.3313 9.25003 9.37718 10.6215C9.40398 11.4245 9.42735 12.88 9.42925 13.8569L9.43151 15.6342L9.28435 15.7339C8.65417 16.1617 7.69146 15.8294 7.4821 15.1112C7.40479 14.8417 7.31096 12.0181 7.30323 9.73845L7.2987 8.47054L7.52738 8.36865C7.90559 8.20313 7.92755 8.2005 8.24285 8.23054Z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.3"/><path d="M3 10.5h18"/><path d="M7 15h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.3" r="3.3"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></symbol>
+  <symbol id="i-home-filled" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.99417 5.24403C1.95987 5.89887 2.06474 14.7709 2.06474 15.4593C2.06474 17.5576 4.09253 19.3013 6.27822 18.8967C6.55537 18.8454 6.97078 18.7057 7.2014 18.5863C7.71374 18.3211 8.68998 17.3871 8.86423 16.9955C8.93417 16.8382 9.02568 16.7087 9.06758 16.7077C9.10947 16.7067 9.26509 16.8883 9.4134 17.1114C10.4357 18.6491 12.1082 19.2714 13.7804 18.7364C14.6185 18.4683 15.3159 17.8574 15.8052 16.9631L16.0351 16.5428L16.2946 16.9854C16.5896 17.4885 17.2516 18.1417 17.7896 18.4605C18.3822 18.8118 18.8202 18.9217 19.605 18.916C20.7082 18.908 21.4411 18.5682 22.2093 17.7086C22.5762 17.298 23.1612 16.2513 23.0741 16.1612C23.0529 16.1392 22.8531 16.2076 22.6302 16.3134C22.0633 16.5823 21.4385 16.5831 21.0481 16.3154C20.5837 15.997 20.556 15.8086 20.4796 12.446C20.4069 9.24644 20.3281 8.00272 20.1681 7.53304C19.9241 6.81659 19.1518 6.02689 18.2677 5.58969C16.6159 4.77304 14.6915 5.36767 13.6293 7.02288C13.45 7.30221 13.2923 7.53079 13.2787 7.53079C13.2652 7.53079 13.1431 7.34233 13.0074 7.11209C12.3246 5.95334 11.1179 5.25946 9.76456 5.24745C9.34367 5.24366 8.99272 5.28553 8.71599 5.37248C7.91378 5.62435 7.06012 6.34189 6.63571 7.1209C6.51292 7.34634 6.38682 7.53079 6.35554 7.53079C6.32419 7.53079 6.217 7.38646 6.11719 7.2101C5.67493 6.42818 4.829 5.6869 4.0736 5.41915C3.62213 5.2591 2.00049 5.12257 1.99417 5.24403ZM8.21778 7.87856C8.37263 7.99121 8.57506 8.22532 8.66763 8.39877C8.82571 8.69507 8.83928 8.81587 8.8922 10.398C8.92313 11.3241 8.95019 13.0038 8.95237 14.1306L8.95624 16.1793L8.78508 16.2955C8.05836 16.7888 6.94934 16.4053 6.7079 15.5771C6.6187 15.2714 6.50996 12.0118 6.50104 9.3805L6.49612 7.91701L6.7597 7.80167C7.19662 7.61045 7.22136 7.60564 7.58518 7.6403C7.81783 7.66251 8.03109 7.74276 8.21778 7.87856ZM15.0806 7.79315C15.3395 7.9283 15.6146 8.28736 15.7041 8.6071C15.8178 9.01372 15.9226 12.043 15.8998 14.2664L15.8797 16.2325L15.6018 16.373C15.4238 16.463 15.167 16.5154 14.8874 16.5187C14.5113 16.523 14.4097 16.4935 14.1524 16.3053C13.5948 15.8973 13.5785 15.8197 13.5176 13.2913C13.4881 12.0654 13.4618 10.3547 13.4593 9.48972L13.4547 7.91701L13.7183 7.79941C14.1771 7.59487 14.6959 7.59246 15.0806 7.79315Z"/></symbol>
+  <symbol id="i-card-filled" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.3" fill="currentColor"/><rect x="3" y="9.4" width="18" height="2.6" fill="#fff"/></symbol>
+  <symbol id="i-grid-filled" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
+  <symbol id="i-user-filled" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.3" r="3.3"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4Z"/></symbol>
+  <symbol id="i-chart-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16 9.5 9.5 13.5 13.5 21 6"/><path d="M15 6h6v6"/></symbol>
+  <symbol id="i-chart-up-filled" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16 9.5 9.5 13.5 13.5 21 6"/><path d="M15 6h6v6"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10.5a6 6 0 0 1 12 0c0 4 1.4 5.4 1.4 5.4H4.6S6 14.5 6 10.5Z"/><path d="M10 19a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-chevd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h11l-3-3"/><path d="M18 16H7l3 3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-7-7 18-2.5-7.5L3 11Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 8v4.5l3 2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"/><path d="M10.6 6c.5-.1.9-.1 1.4-.1 6 0 9.5 6.1 9.5 6.1a17 17 0 0 1-2.7 3.3M6.6 6.9A16 16 0 0 0 2.5 12S6 18.5 12 18.5c1.2 0 2.3-.2 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M14.5 14.5h3v3h-3zM19.5 14.5v6M14.5 19.5h5.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20.2 20.2-4.6-4.6"/></symbol>
+  <symbol id="i-backspace" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-6-6 6-6Z"/><path d="m11.5 10 4 4m0-4-4 4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.5 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.3l-5.4 3 1.1-6.1-4.5-4.3 6.1-.8Z"/></symbol>
+  <symbol id="i-star-filled" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3.5 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.3l-5.4 3 1.1-6.1-4.5-4.3 6.1-.8Z"/></symbol>
+  <symbol id="i-buy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12.5"/><path d="m7.5 12 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></symbol>
+  <symbol id="i-sell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-12.5"/><path d="m7.5 12 4.5-4.5 4.5 4.5"/><path d="M5 4h14"/></symbol>
+  <symbol id="i-withdraw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4"/><path d="m8 8 4-4 4 4"/><path d="M5 15v3.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V15"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8 12 3.5 20.5 8 12 12.5 3.5 8Z"/><path d="M3.5 8v8.7L12 21l8.5-4.3V8"/><path d="M12 12.5V21"/></symbol>
+  <symbol id="i-tx-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9.5 7H17v7.5"/></symbol>
+  <symbol id="i-tx-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10"/><path d="M17 9.5V17H9.5"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="13" rx="2.2"/><path d="M3.5 10h17"/><circle cx="16.3" cy="13.7" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="7" rx="7.3" ry="3.1"/><path d="M4.7 7v10c0 1.7 3.3 3.1 7.3 3.1s7.3-1.4 7.3-3.1V7"/><path d="M4.7 12c0 1.7 3.3 3.1 7.3 3.1s7.3-1.4 7.3-3.1"/></symbol>
+  <symbol id="i-crypto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.3"/><path d="M9.5 9h3.6a1.9 1.9 0 0 1 0 3.8H9.5m0-3.8V15m0-3.2h4.1a1.9 1.9 0 0 1 0 3.8H9.5m2-9v1.4m0 9.2V15"/></symbol>
+  <symbol id="i-stock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M9.5 19V5M15 19v-7M20 19V11"/></symbol>
+  <symbol id="i-etf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.5 8 4.5-8 4.5-8-4.5Z"/><path d="m4 12.5 8 4.5 8-4.5"/><path d="m4 16.5 8 4.5 8-4.5"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7.3" cy="7.3" r="2.3"/><circle cx="16.7" cy="16.7" r="2.3"/></symbol>
+  <symbol id="i-loan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="6.5" width="18.4" height="11" rx="2.2"/><circle cx="12" cy="12" r="2.6"/><path d="M6.2 9.3h.01M17.8 14.7h.01"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="17" rx="2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path d="M8.5 12h7M8.5 16h5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="9" height="17" rx="1.4"/><rect x="14.5" y="9" width="4.5" height="11.5" rx="1.2"/><path d="M8 7.5h.01M11 7.5h.01M8 11h.01M11 11h.01M8 14.5h.01M11 14.5h.01"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 1.6 4.5 4.8 4.5 8.7 0 2.6-.8 4.7-1.6 6l-2.9 2.3-2.9-2.3c-.8-1.3-1.6-3.4-1.6-6 0-3.9 1.7-7.1 4.5-8.7Z"/><circle cx="12" cy="10.5" r="1.6"/><path d="M9 17.5 6.5 20M15 17.5l2.5 2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 5.5v5.7c0 4.4 3 7.9 7 9.3 4-1.4 7-4.9 7-9.3V5.5Z"/><path d="m9 12 2 2 4-4.2"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.3M12 18.2v2.3M20.5 12h-2.3M5.8 12H3.5M17.7 6.3l-1.6 1.6M7.9 16.1l-1.6 1.6M17.7 17.7l-1.6-1.6M7.9 7.9 6.3 6.3"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3.2" y="13" width="4" height="6" rx="1.6"/><rect x="16.8" y="13" width="4" height="6" rx="1.6"/><path d="M20.8 19c0 1.7-1.7 2.7-4.3 2.7"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="8.3" r="0.9" fill="currentColor" stroke="none"/><path d="M12 11.2v5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5H6.3A2.3 2.3 0 0 0 4 6.8v10.4a2.3 2.3 0 0 0 2.3 2.3H9"/><path d="M14.5 8 19 12l-4.5 4"/><path d="M19 12H9.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9" rx="2.2"/><path d="M8 10.5V7.7a4 4 0 0 1 8 0v2.8"/><circle cx="12" cy="14.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.2" y="5" width="4" height="14" rx="1.2"/><rect x="13.8" y="5" width="4" height="14" rx="1.2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v7"/><path d="M7 6.3a7.3 7.3 0 1 0 10 0"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M9.3 9.3h3.4a1.7 1.7 0 0 1 0 3.4H9.3m0-3.4v6.8m0-6.8H8m1.3 3.4h3.9m-3.9 3.4h1.3"/></symbol>
+  <symbol id="i-btc-logo" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="16" fill="#F7931A"/>
+    <path fill="#fff" d="M22.9 14.1c.3-2.1-1.3-3.2-3.5-4l.7-2.9-1.8-.4-.7 2.8c-.5-.1-1-.2-1.4-.3l.7-2.8-1.8-.4-.7 2.9c-.4-.1-.8-.2-1.1-.3l0 0-2.5-.6-.5 2s1.3.3 1.3.3c.7.2.8.6.8 1l-.8 3.3c.1 0 .1 0 .2.1l-.2 0-1.2 4.6c-.1.2-.3.6-.9.4 0 0-1.3-.3-1.3-.3l-.9 2 2.4.6c.4.1.9.2 1.3.3l-.7 2.9 1.8.4.7-2.9c.5.1 1 .2 1.4.3l-.7 2.9 1.8.4.7-2.9c3 .6 5.3.3 6.2-2.4.8-2.1-.1-3.4-1.6-4.2 1.1-.3 1.9-1 2.1-2.5Zm-4 5.8c-.6 2.3-4.5 1-5.7.8l1-4.1c1.3.3 5.3.9 4.7 3.3Zm.6-5.9c-.5 2.1-3.8 1-4.9.7l.9-3.7c1.1.2 4.5.6 4 3Z"/>
+  </symbol>
+  <symbol id="i-eth-logo" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="16" fill="#627EEA"/>
+    <path fill="#fff" fill-opacity=".85" d="M16 6 16 16 7 16Z"/>
+    <path fill="#fff" fill-opacity=".5" d="M16 6 25 16 16 16Z"/>
+    <path fill="#fff" fill-opacity=".5" d="M7 16 16 16 16 26Z"/>
+    <path fill="#fff" fill-opacity=".85" d="M16 16 25 16 16 26Z"/>
+  </symbol>
+  <symbol id="i-usdt-logo" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="16" fill="#26A17B"/>
+    <rect x="8" y="10.3" width="16" height="3.4" rx="1" fill="#fff"/>
+    <rect x="14.3" y="10.3" width="3.4" height="14.3" rx="1" fill="#fff"/>
+  </symbol>
+</svg>
+
+<div class="page">
+
+  <div class="stage">
+    <!-- ===================== PHONE ===================== -->
+    <div class="phone">
+      <div class="screen" id="screen">
+        <div class="status-bar">
+          <span><bdi style="direction:ltr">9:41</bdi></span>
+          <div class="icons">
+            <svg viewBox="0 0 20 12" width="17" height="10"><rect x="0" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="5" y="4" width="3" height="7" rx="0.5" fill="currentColor"/><rect x="10" y="1.5" width="3" height="9.5" rx="0.5" fill="currentColor"/><rect x="15" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 12" width="22" height="11"><rect x="0.5" y="0.5" width="19" height="11" rx="2.5" stroke="currentColor" fill="none"/><rect x="21" y="4" width="1.6" height="4" rx="0.8" fill="currentColor"/><rect x="2" y="2" width="15" height="8" rx="1.2" fill="currentColor"/></svg>
+          </div>
+        </div>
+
+        <!-- ============ HOME ============ -->
+        <section class="app-screen active" data-screen="home">
+          <div class="topbar">
+            <div class="account-switch state" id="openAccountSheet">
+              <span class="name title-l">علی رضایی</span>
+              <svg class="icon"><use href="#i-chevd"/></svg>
+            </div>
+            <div class="topbar-icons">
+              <div class="icon-btn state" id="homeQrBtn"><svg class="icon"><use href="#i-qr"/></svg></div>
+              <div class="icon-btn state" id="privacyToggle" role="button" aria-label="مخفی‌کردن مبالغ"><svg class="icon"><use href="#i-eye" id="privacyIcon"/></svg></div>
+              <div class="icon-btn state"><svg class="icon"><use href="#i-bell"/></svg><span class="badge"></span></div>
+            </div>
+          </div>
+
+          <div class="balance-block">
+            <div class="balance-label label-l">مجموع دارایی
+            </div>
+            <div class="balance-figure display-s"><bdi>190,677,000</bdi><span class="unit">تومان</span></div>
+          </div>
+
+          <div class="actions-row">
+            <button class="action-btn state" id="actAdd">
+              <span class="circle"><svg class="icon"><use href="#i-plus"/></svg></span>
+              <span class="lbl label-m">خرید</span>
+            </button>
+            <button class="action-btn state" id="actConvert">
+              <span class="circle"><svg class="icon"><use href="#i-send"/></svg></span>
+              <span class="lbl label-m">ارسال</span>
+            </button>
+            <button class="action-btn state" id="actPay">
+              <span class="circle"><svg class="icon"><use href="#i-swap"/></svg></span>
+              <span class="lbl label-m">تبدیل</span>
+            </button>
+            <button class="action-btn state" id="actHistory">
+              <span class="circle"><svg class="icon"><use href="#i-clock"/></svg></span>
+              <span class="lbl label-m">تاریخچه</span>
+            </button>
+          </div>
+
+          <div class="hero-slideshow" id="heroSlideshow">
+            <div class="hero-viewport" id="heroViewport">
+              <div class="hero-track" id="heroTrack">
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-1.jpg" alt="بنر میلی" loading="eager"></div>
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-2.gif" alt="بنر میلی" loading="lazy"></div>
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-3.jpg" alt="بنر میلی" loading="lazy"></div>
+              </div>
+            </div>
+            <div class="hero-dots" id="heroDots" role="tablist" aria-label="اسلایدهای پیشنهادی">
+              <button class="hero-dot active" data-idx="0" aria-label="اسلاید ۱"></button>
+              <button class="hero-dot" data-idx="1" aria-label="اسلاید ۲"></button>
+              <button class="hero-dot" data-idx="2" aria-label="اسلاید ۳"></button>
+            </div>
+          </div>
+
+          <div class="list-head"><h3 class="title-s">دارایی‌ها</h3></div>
+          <div id="assetList"></div>
+
+          <div class="outapp-section" id="outappSection">
+            <div class="outapp-title title-s">
+              <svg class="icon"><use href="#i-clip"/></svg>
+              دارایی‌های خارج از اپ
+            </div>
+            <div id="outappList"></div>
+          </div>
+
+          <div id="followedSection">
+            <div class="list-head" style="padding-top:18px;"><h3 class="title-s">دنبال‌شده</h3></div>
+            <div id="followedList"></div>
+          </div>
+
+          <div class="banners">
+            <div class="banner b1 body-m">
+              <div class="t1 title-s">با طلای دیجیتال شروع کن</div>
+              <div class="t2 body-s">از ۱ سوت، بدون حداقل سرمایه</div>
+            </div>
+            <div class="banner b2 body-m">
+              <div class="t1 title-s">اعتبار خرید فعال شد</div>
+              <div class="t2 body-s">در چک‌اوت فروشگاه‌های منتخب</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ CARD ============ -->
+        <section class="app-screen" data-screen="card">
+          <div class="topbar">
+            <div class="account-switch"><span class="name title-l">کارت‌ها</span></div>
+            <div class="topbar-icons"><div class="icon-btn state" id="cardQrBtn"><svg class="icon"><use href="#i-qr"/></svg></div></div>
+          </div>
+
+          <div class="card-stage" style="margin-top:14px;">
+            <div class="card-carousel-wrap" id="cardCarouselWrap">
+              <div class="card-carousel" id="cardCarousel">
+                <div class="card-slide">
+                  <div class="card-visual body-m">
+                    <div class="row1"><span class="brand label-m">کارت شخصی</span><svg class="card-logo" aria-hidden="true"><use href="#i-home-filled"/></svg></div>
+                    <div class="num title-l"><bdi>••••  ••••  ••••  4471</bdi></div>
+                    <div class="row3 label-s"><span>علی رضایی</span><span><bdi>08/29</bdi></span></div>
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="card-visual gold body-m">
+                    <div class="row1"><span class="brand label-m">کارت پشتوانه طلا/کریپتو</span><svg class="card-logo" aria-hidden="true"><use href="#i-home-filled"/></svg></div>
+                    <div class="num title-l"><bdi>••••  ••••  ••••  9203</bdi></div>
+                    <div class="row3 label-s"><span>موجودی پشتوانه: طلا + کریپتو</span><span><bdi>--/--</bdi></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="card-nav-btn prev state" id="cardPrevBtn" aria-label="کارت قبلی"><svg class="icon"><use href="#i-arrow-r"/></svg></button>
+            <button class="card-nav-btn next state" id="cardNextBtn" aria-label="کارت بعدی"><svg class="icon"><use href="#i-arrow-l"/></svg></button>
+          </div>
+
+          <div class="card-dots">
+            <span class="dot active" data-idx="0"></span>
+            <span class="dot" data-idx="1"></span>
+          </div>
+
+          <div class="actions-row" style="padding:6px 8px 2px;">
+            <button class="action-btn state" id="cardActNumber">
+              <span class="circle"><svg class="icon"><use href="#i-card"/></svg></span>
+              <span class="lbl label-m">شماره کارت/شبا</span>
+            </button>
+            <button class="action-btn state" id="cardActPin">
+              <span class="circle"><svg class="icon"><use href="#i-lock"/></svg></span>
+              <span class="lbl label-m">رمز دوم</span>
+            </button>
+            <button class="action-btn state" id="cardActSettings">
+              <span class="circle"><svg class="icon"><use href="#i-gear"/></svg></span>
+              <span class="lbl label-m">تنظیمات</span>
+            </button>
+            <button class="action-btn state" id="cardActMore">
+              <span class="circle"><svg class="icon"><use href="#i-dots"/></svg></span>
+              <span class="lbl label-m">بیشتر</span>
+            </button>
+          </div>
+          <div class="linked-note body-s" id="cardLinkedNote">
+            این کارت هم‌زمان از صفحه‌ی جزئیات طلا/کریپتو در تب خانه نیز قابل دسترسی است (کراس‌لینک، نه تکرار). طبق یادداشت سند اصلی، دارایی پشتوانه فقط یک‌بار در مجموع دارایی محاسبه می‌شود — خود کارت ارزش مستقلی ندارد.
+          </div>
+
+          <div class="list-head" style="padding-top:20px;"><h3 class="title-s">تراکنش‌های اخیر</h3></div>
+          <div class="body-m">
+            <div class="hist-row"><span class="l">تراکنش خرید با کارت</span><span class="r"><span class="tx-amt out"><bdi>350,000</bdi><svg class="icon"><use href="#i-tx-out"/></svg></span></span></div>
+            <div class="hist-row"><span class="l">تراکنش خرید با کارت</span><span class="r"><span class="tx-amt out"><bdi>120,000</bdi><svg class="icon"><use href="#i-tx-out"/></svg></span></span></div>
+            <div class="hist-row"><span class="l">تراکنش خرید با کارت</span><span class="r"><span class="tx-amt out"><bdi>89,000</bdi><svg class="icon"><use href="#i-tx-out"/></svg></span></span></div>
+            <div class="hist-row"><span class="l">صدور کارت</span><span class="r"><bdi>—</bdi></span></div>
+          </div>
+        </section>
+
+        <!-- ============ MARKET ============ -->
+        <section class="app-screen" data-screen="market">
+          <div class="topbar">
+            <div class="account-switch"><span class="name title-l">بازار</span></div>
+            <div class="topbar-icons"><div class="icon-btn state" id="marketSearchBtn"><svg class="icon"><use href="#i-search"/></svg></div></div>
+          </div>
+
+          <div class="list-head mkt-toptraded-head"><h3 class="title-s">پرمعامله‌ترین‌ها (۲۴ ساعت)</h3></div>
+          <div class="mkt-carousel" id="topTradedCarousel"></div>
+
+          <div class="mkt-filter-row">
+            <button class="mkt-filter-chip state" id="catFilterChip"><span id="catFilterLabel">همه</span><svg class="icon"><use href="#i-chevd"/></svg></button>
+            <button class="mkt-filter-chip state" id="sortFilterChip"><span>ارزش بازار</span><svg class="icon" id="sortArrowIcon"><use href="#i-chevd"/></svg></button>
+            <button class="mkt-filter-chip state"><span>۲۴ ساعت</span><svg class="icon"><use href="#i-chevd"/></svg></button>
+          </div>
+
+          <div id="marketList"></div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="app-screen" data-screen="services">
+          <div class="topbar"><div class="account-switch"><span class="name title-l">خدمات</span></div></div>
+          <div class="hero-slideshow" id="svcSlideshow">
+            <div class="hero-viewport" id="svcViewport">
+              <div class="hero-track" id="svcTrack">
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-1.jpg" alt="بنر میلی" loading="lazy"></div>
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-2.gif" alt="بنر میلی" loading="lazy"></div>
+                <div class="hero-slide"><img src="../../assets/slideshows/slide-3.jpg" alt="بنر میلی" loading="lazy"></div>
+              </div>
+            </div>
+            <div class="hero-dots" id="svcDots" role="tablist" aria-label="اسلایدهای خدمات">
+              <button class="hero-dot active" data-idx="0" aria-label="اسلاید ۱"></button>
+              <button class="hero-dot" data-idx="1" aria-label="اسلاید ۲"></button>
+              <button class="hero-dot" data-idx="2" aria-label="اسلاید ۳"></button>
+            </div>
+          </div>
+
+          <div class="list-head"><h3 class="title-s">مینی‌اپ‌های فعال</h3></div>
+          <div class="mini-grid" id="miniGrid"></div>
+
+          <div class="list-head"><h3 class="title-s">بازپرداخت</h3></div>
+          <div class="debts-card"><div id="debtList"></div></div>
+
+          <div class="list-head"><h3 class="title-s">به‌زودی</h3>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-app soon"><span class="box"><svg class="icon"><use href="#i-shield"/></svg></span><span class="lbl label-m">بیمه</span></div>
+            <div class="mini-app soon"><span class="box"><svg class="icon"><use href="#i-coin"/></svg></span><span class="lbl label-m">تأمین مالی جمعی</span></div>
+          </div>
+        </section>
+
+        <!-- ============ PROFILE ============ -->
+        <section class="app-screen" data-screen="profile">
+          <div class="profile-head">
+            <div class="profile-avatar"><svg class="icon"><use href="#i-user"/></svg></div>
+            <div><div class="name title-l">علی رضایی</div><div class="sub body-s">شخصی · احراز هویت تکمیل‌شده</div></div>
+          </div>
+          <div class="plist-row state"><span class="avatar"><svg class="icon"><use href="#i-gear"/></svg></span><span class="name body-l">تنظیمات</span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
+          <div class="plist-row state"><span class="avatar"><svg class="icon"><use href="#i-shield"/></svg></span><span class="name body-l">امنیت</span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
+          <div class="plist-row state"><span class="avatar"><svg class="icon"><use href="#i-info"/></svg></span><span class="name body-l">درباره ما</span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
+          <div class="plist-row state"><span class="avatar"><svg class="icon"><use href="#i-phone"/></svg></span><span class="name body-l">تماس با ما</span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
+          <div class="plist-row state"><span class="avatar"><svg class="icon"><use href="#i-headset"/></svg></span><span class="name body-l">پشتیبانی</span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
+          <div class="plist-divider"></div>
+          <div class="plist-row logout state"><span class="avatar"><svg class="icon"><use href="#i-logout"/></svg></span><span class="name body-l">خروجی از حساب</span></div>
+        </section>
+
+        <!-- ============ OVERLAY: asset detail ============ -->
+        <div class="overlay" id="ovDetail">
+          <div class="overlay-head" style="justify-content:space-between;">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <button class="star-btn state" id="dStarBtn"><svg class="icon icon-outline"><use href="#i-star"/></svg><svg class="icon icon-filled"><use href="#i-star-filled"/></svg></button>
+          </div>
+          <div class="overlay-body">
+            <div class="asset-row" id="dRow" style="cursor:default;"></div>
+            <div id="dVisual"></div>
+            <div id="dPnl"></div>
+            <div class="hist-mini-head title-s">تاریخچه‌ی اختصاصی این دارایی</div>
+            <div id="dHist"></div>
+          </div>
+          <div class="nav-island" id="dActions"></div>
+        </div>
+
+        <!-- ============ OVERLAY: receive ============ -->
+        <div class="overlay" id="ovReceive">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">دریافت</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="asset-row" id="recvRow" style="cursor:default;"></div>
+            <div class="recv-qr-wrap" id="recvQR"></div>
+            <div class="recv-value-block">
+              <div class="recv-value-label label-m" id="recvLabel">—</div>
+              <div class="recv-value-row">
+                <span class="recv-value-text body-m" id="recvValue" style="direction:ltr; unicode-bidi:isolate;">—</span>
+                <button class="recv-copy-btn state" id="recvCopyBtn"><svg class="icon"><use href="#i-copy"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ OVERLAY: history ============ -->
+        <div class="overlay" id="ovHistory">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">تاریخچه</h4>
+          </div>
+          <div class="filter-tabs" id="historyFilterTabs">
+            <button class="filter-chip active state" data-cat="all">همه</button>
+            <button class="filter-chip state" data-cat="transfer">انتقال</button>
+            <button class="filter-chip state" data-cat="buy">خرید</button>
+            <button class="filter-chip state" data-cat="sell">فروش</button>
+            <button class="filter-chip state" data-cat="request">درخواست‌ها</button>
+          </div>
+          <div class="overlay-body body-m" id="historyList"></div>
+        </div>
+
+        <!-- ============ OVERLAY: convert (demo) ============ -->
+        <div class="overlay" id="ovSendDestination">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">ارسال</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="asset-row" id="sendRow" style="cursor:default;"></div>
+            <div class="send-field-block">
+              <div class="send-field-label label-m" id="sendDestLabel">—</div>
+              <input type="text" class="send-input" id="sendDestInput" placeholder="وارد کنید" style="direction:ltr; text-align:left;">
+            </div>
+            <div class="send-field-block">
+              <div class="send-field-label label-m">مبلغ</div>
+              <input type="text" class="send-input" id="sendAmountInput" placeholder="0" inputmode="numeric" style="direction:ltr; text-align:left;">
+            </div>
+          </div>
+          <div class="bs-confirm-wrap">
+            <button class="btn btn-filled state" id="sendConfirmBtn">ارسال</button>
+          </div>
+        </div>
+
+        <!-- ============ OVERLAY: convert ============ -->
+        <div class="overlay" id="ovConvert">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">تبدیل</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="conv-field-card">
+              <button class="conv-asset-select state" id="convFromCard">
+                <span class="bs-asset-left">
+                  <span class="bs-asset-avatar" id="convFromAvatar"></span>
+                  <span class="bs-asset-name title-m" id="convFromName">—</span>
+                </span>
+                <svg class="icon"><use href="#i-chevd"/></svg>
+              </button>
+              <input type="text" class="conv-amount-input" id="convFromInput" placeholder="0" inputmode="numeric">
+            </div>
+            <div class="conv-swap-row">
+              <button class="conv-swap-btn state" id="convSwapBtn"><svg class="icon"><use href="#i-swap"/></svg></button>
+            </div>
+            <div class="conv-field-card">
+              <button class="conv-asset-select state" id="convToCard">
+                <span class="bs-asset-left">
+                  <span class="bs-asset-avatar" id="convToAvatar"></span>
+                  <span class="bs-asset-name title-m" id="convToName">—</span>
+                </span>
+                <svg class="icon"><use href="#i-chevd"/></svg>
+              </button>
+              <div class="conv-amount-display" id="convToDisplay">0</div>
+            </div>
+          </div>
+          <div class="bs-confirm-wrap">
+            <button class="btn btn-filled state" id="convConfirmBtn">تبدیل</button>
+          </div>
+        </div>
+
+        <!-- ============ OVERLAY: pay/scan ============ -->
+        <div class="overlay" id="ovPay">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">پرداخت / اسکن</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="qr-box"><svg class="icon"><use href="#i-qr"/></svg></div>
+            <div class="stub-body body-m"><p>کد QR فروشنده را در کادر بالا نشان دهید یا کد پرداخت را به‌صورت دستی وارد کنید.</p></div>
+          </div>
+          <div class="float-actions"><button class="btn btn-outlined state">ورود دستی کد</button></div>
+        </div>
+
+        <!-- ============ OVERLAY: add asset picker (tabs + search) ============ -->
+        <div class="overlay" id="ovAddPicker">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l" id="addPickerTitle">افزودن</h4>
+          </div>
+          <div style="padding:0 20px 10px;">
+            <div class="search-box">
+              <svg class="icon"><use href="#i-search"/></svg>
+              <input type="text" id="addSearchInput" placeholder="جستجوی دارایی…">
+            </div>
+          </div>
+          <div class="filter-tabs" id="addFilterTabs">
+            <button class="filter-chip active state" data-cat="all">همه</button>
+            <button class="filter-chip state" data-cat="rial">ریالی</button>
+            <button class="filter-chip state" data-cat="gold">طلا</button>
+            <button class="filter-chip state" data-cat="crypto">رمزارز</button>
+            <button class="filter-chip state" data-cat="stock">سهام</button>
+            <button class="filter-chip state" data-cat="etf">ETF</button>
+          </div>
+          <div class="overlay-body" id="addAssetList"></div>
+        </div>
+
+        <!-- ============ OVERLAY: buy/sell ============ -->
+        <div class="overlay" id="ovBuySell">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <div class="bs-tabs-inline" id="bsTabs">
+              <button class="filter-chip active state" data-side="buy">خرید</button>
+              <button class="filter-chip state" data-side="sell">فروش</button>
+            </div>
+            <span style="width:40px; flex-shrink:0;"></span>
+          </div>
+          <div class="overlay-body">
+            <button class="bs-asset-card state" id="bsAssetCard">
+              <span class="bs-asset-left">
+                <span class="bs-asset-avatar" id="bsAssetAvatar"></span>
+                <span class="bs-asset-name title-m" id="bsAssetName">—</span>
+              </span>
+              <svg class="icon"><use href="#i-chevd"/></svg>
+            </button>
+            <div class="bs-amount-block">
+              <div class="bs-amount-label label-m">مبلغ خرید</div>
+              <div class="bs-amount-display" id="bsAmountDisplay"><bdi>0</bdi> <span class="unit">تومان</span></div>
+            </div>
+          </div>
+          <div class="bs-keypad" id="bsKeypad">
+            <button class="bs-key state" data-k="1">۱</button>
+            <button class="bs-key state" data-k="2">۲</button>
+            <button class="bs-key state" data-k="3">۳</button>
+            <button class="bs-key state" data-k="4">۴</button>
+            <button class="bs-key state" data-k="5">۵</button>
+            <button class="bs-key state" data-k="6">۶</button>
+            <button class="bs-key state" data-k="7">۷</button>
+            <button class="bs-key state" data-k="8">۸</button>
+            <button class="bs-key state" data-k="9">۹</button>
+            <button class="bs-key state" data-k=".">.</button>
+            <button class="bs-key state" data-k="0">۰</button>
+            <button class="bs-key state" data-k="back"><svg class="icon"><use href="#i-backspace"/></svg></button>
+          </div>
+          <div class="bs-confirm-wrap">
+            <button class="btn btn-filled state" id="bsConfirmBtn">خرید</button>
+          </div>
+        </div>
+
+        <!-- ============ OVERLAY: more mini-apps ============ -->
+        <div class="overlay" id="ovMore">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l">بیشتر</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="mini-grid" id="moreGrid"></div>
+          </div>
+        </div>
+
+        <!-- ============ OVERLAY: mini-app stub ============ -->
+        <div class="overlay" id="ovStub">
+          <div class="overlay-head">
+            <button class="back-btn state"><svg class="icon"><use href="#i-back"/></svg></button>
+            <h4 class="title-l" id="sTitle">—</h4>
+          </div>
+          <div class="overlay-body">
+            <div class="stub-icon" id="sIcon"></div>
+            <div class="stub-body">
+              <h5 class="title-m" id="sHead">—</h5>
+              <p class="body-m" id="sDesc">—</p>
+              <span class="stub-flag label-m" id="sFlag">این بخش در فاز بعدی طراحی می‌شود</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- account switcher sheet -->
+        <div class="sheet-backdrop" id="sheetBackdrop"></div>
+        <div class="sheet" id="accountSheet">
+          <div class="handle"></div>
+          <h4 class="title-s">سوییچ حساب</h4>
+          <div class="sheet-row"><span class="avatar"><svg class="icon"><use href="#i-user"/></svg></span><span class="name body-l">شخصی</span></div>
+          <div class="sheet-add state"><span class="avatar"><svg class="icon"><use href="#i-plus"/></svg></span><span class="name body-l">افزودن حساب</span></div>
+        </div>
+
+        <!-- card "more" sheet -->
+        <div class="sheet-backdrop" id="cardMoreBackdrop"></div>
+        <div class="sheet" id="cardMoreSheet">
+          <div class="handle"></div>
+          <h4 class="title-s">بیشتر</h4>
+          <div class="sheet-row state"><span class="avatar"><svg class="icon"><use href="#i-pause"/></svg></span><span class="name body-l">مسدودسازی موقت</span></div>
+          <div class="sheet-row state"><span class="avatar"><svg class="icon"><use href="#i-swap"/></svg></span><span class="name body-l">تعویض کارت</span></div>
+          <div class="sheet-row danger state"><span class="avatar"><svg class="icon"><use href="#i-power"/></svg></span><span class="name body-l">غیرفعال کردن (دائمی)</span></div>
+        </div>
+
+
+        <!-- ============ M3 NAV BAR ============ -->
+        <nav class="tabbar">
+          <button class="tab active" data-tab="home"><span class="nav-indicator"><svg class="icon icon-outline"><use href="#i-home"/></svg><svg class="icon icon-filled"><use href="#i-home-filled"/></svg></span><span class="lbl">خانه</span></button>
+          <button class="tab" data-tab="market"><span class="nav-indicator"><svg class="icon icon-outline"><use href="#i-chart-up"/></svg><svg class="icon icon-filled"><use href="#i-chart-up-filled"/></svg></span><span class="lbl">بازار</span></button>
+          <button class="tab" data-tab="services"><span class="nav-indicator"><svg class="icon icon-outline"><use href="#i-grid"/></svg><svg class="icon icon-filled"><use href="#i-grid-filled"/></svg></span><span class="lbl">خدمات</span></button>
+          <button class="tab" data-tab="card"><span class="nav-indicator"><svg class="icon icon-outline"><use href="#i-card"/></svg><svg class="icon icon-filled"><use href="#i-card-filled"/></svg></span><span class="lbl">کارت‌ها</span></button>
+          <button class="tab" data-tab="profile"><span class="nav-indicator"><svg class="icon icon-outline"><use href="#i-user"/></svg><svg class="icon icon-filled"><use href="#i-user-filled"/></svg></span><span class="lbl">پروفایل</span></button>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const assets = [
+  {id:'wallet', name:'کیف پول', icon:'i-wallet', cat:'rial', eq:'12,450,000', amt:'', receiveLabel:'شماره کارت', receiveValue:'6274-1211-2345-6789',
+    detailAmt:'12,450,000 تومان', detailEq:'موجودی ریالی کیف پول', chart:'trend',
+    actions:[{l:'افزودن',p:1},{l:'برداشت',p:0},{l:'دریافت',p:0}],
+    hist:[['واریز به کیف پول','+2,000,000'],['خرید طلا','-1,200,000'],['برداشت از کیف پول','-1,000,000']]},
+  {id:'gold', name:'طلای دیجیتال', icon:'i-gold', bg:'#FFB100', fg:'#FFFFFF', cat:'gold', eq:'128,450,000', amt:'3.412 گرم', receiveLabel:'شماره حساب', receiveValue:'IR12 0170 0000 0012 3456 7890 01', pnlPercent:12.4, starred:true, vol:'4.8 میلیارد تومان',
+    detailAmt:'3.412 گرم', detailEq:'≈ 128,450,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'تحویل فیزیکی',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید طلا','+0.42 گرم'],['فروش طلا','-0.1 گرم'],['خرید طلا','+0.2 گرم']]},
+  {id:'btc', name:'بیت‌کوین', icon:'i-btc-logo', logo:true, cat:'crypto', tag:'رمزارز', eq:'15,020,000', amt:'0.041 BTC', receiveLabel:'آدرس ولت', receiveValue:'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', pnlPercent:34.8, starred:true, vol:'8.5 میلیارد تومان',
+    detailAmt:'0.041 BTC', detailEq:'≈ 15,020,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید رمزارز','+0.012 BTC'],['فروش رمزارز','-0.004 BTC']]},
+  {id:'eth', name:'اتریوم', icon:'i-eth-logo', logo:true, cat:'crypto', tag:'رمزارز', eq:'9,850,000', amt:'0.62 ETH', receiveLabel:'آدرس ولت', receiveValue:'0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db', pnlPercent:18.2, vol:'3.2 میلیارد تومان',
+    detailAmt:'0.62 ETH', detailEq:'≈ 9,850,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید رمزارز','+0.2 ETH']]},
+  {id:'usdt', name:'تتر', icon:'i-usdt-logo', logo:true, cat:'crypto', tag:'رمزارز', eq:'8,700,000', amt:'145 USDT', receiveLabel:'آدرس ولت', receiveValue:'0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984', pnlPercent:0.1, vol:'12 میلیارد تومان',
+    detailAmt:'145 USDT', detailEq:'≈ 8,700,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید رمزارز','+50 USDT'],['فروش رمزارز','-20 USDT']]},
+  {id:'foolad', name:'فولاد مبارکه', icon:'i-stock', glyph:'فو', bg:'#E2E7EC', fg:'#455A6B', cat:'stock', tag:'سهام', eq:'6,200,000', amt:'500 سهم', receiveLabel:'آدرس ولت', receiveValue:'0x7a3E1c9B4d2F6a8C0e5D3b1A9f7C2E4d6B8A0c1F', pnlPercent:-4.3, starred:true, vol:'620 میلیون تومان',
+    detailAmt:'500 سهم', detailEq:'≈ 6,200,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید سهام','+200 سهم']]},
+  {id:'shasta', name:'شستا', icon:'i-stock', glyph:'شس', bg:'#F1E2E6', fg:'#8C3F52', cat:'stock', tag:'سهام', eq:'3,450,000', amt:'1,200 سهم', receiveLabel:'آدرس ولت', receiveValue:'0x9C2e4A6b8D0f1E3c5A7b9D1f3E5c7A9b1D3f5E7C', pnlPercent:7.6, vol:'340 میلیون تومان',
+    detailAmt:'1,200 سهم', detailEq:'≈ 3,450,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید سهام','+400 سهم'],['فروش سهام','-100 سهم']]},
+  {id:'felez', name:'فملی', icon:'i-stock', glyph:'فم', bg:'#F3E3DA', fg:'#A85736', cat:'stock', tag:'سهام', eq:'5,100,000', amt:'300 سهم', receiveLabel:'آدرس ولت', receiveValue:'0x3F1e9C7b5A3d1E9f7C5b3A1d9E7f5C3b1A9d7E5F', pnlPercent:-2.1, vol:'410 میلیون تومان',
+    detailAmt:'300 سهم', detailEq:'≈ 5,100,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید سهام','+120 سهم']]},
+  {id:'zafaran', name:'صندوق زعفران', icon:'i-etf', glyph:'زع', bg:'#F5E1D6', fg:'#9A4B2E', cat:'etf', tag:'ETF', eq:'570,000', amt:'15 واحد', receiveLabel:'آدرس ولت', receiveValue:'0x2B4d6F8a0C2e4B6d8F0a2C4e6B8d0F2a4C6e8B0D', pnlPercent:9.4, starred:true, vol:'58 میلیون تومان',
+    detailAmt:'15 واحد', detailEq:'≈ 570,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید واحد صندوق','+25 واحد'],['فروش واحد صندوق','-10 واحد']]},
+  {id:'sinergy', name:'صندوق سینرژی', icon:'i-etf', glyph:'سی', bg:'#DCE8F0', fg:'#2C5F7C', cat:'etf', tag:'ETF', eq:'443,000', amt:'20 واحد', receiveLabel:'آدرس ولت', receiveValue:'0x5A7c9E1b3D5f7A9c1E3b5D7f9A1c3E5b7D9f1A3C', pnlPercent:-1.8, vol:'44 میلیون تومان',
+    detailAmt:'20 واحد', detailEq:'≈ 443,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید واحد صندوق','+40 واحد']]},
+  {id:'nahal', name:'صندوق نهال', icon:'i-etf', glyph:'نه', bg:'#DCEDDC', fg:'#3E7A47', cat:'etf', tag:'ETF', eq:'444,000', amt:'30 واحد', receiveLabel:'آدرس ولت', receiveValue:'0x8D0f2A4c6E8b0D2f4A6c8E0b2D4f6A8c0E2b4D6F', pnlPercent:15.2, vol:'67 میلیون تومان',
+    detailAmt:'30 واحد', detailEq:'≈ 444,000 تومان', chart:'price',
+    actions:[{l:'خرید',p:1},{l:'فروش',p:0},{l:'دریافت',p:0}],
+    hist:[['خرید واحد صندوق','+60 واحد'],['فروش واحد صندوق','-15 واحد']]},
+];
+
+const debts = [
+  {name:'وام', sub:'مانده وام شخصی', amt:'42,000,000', icon:'i-percent'},
+  {name:'اعتبار خرید (BNPL)', sub:'اقساط باقی‌مانده', amt:'3,400,000', icon:'i-calendar'},
+];
+
+const outapp = [
+  {name:'۲ سکه امامی', est:'≈ 68,000,000 تومان'},
+  {name:'۳ سکه بهار آزادی', est:'≈ 96,500,000 تومان'},
+  {name:'۴۰ گرم طلای آب‌شده', est:'≈ 150,200,000 تومان'},
+];
+
+const marketOnlyAssets = [];
+function findMarketAsset(id){ return assets.find(x=>x.id===id) || marketOnlyAssets.find(x=>x.id===id); }
+
+const marketData = {
+  btc:   {price:'366,000,000', change:2.4},
+  eth:   {price:'15,900,000',  change:1.1},
+  usdt:  {price:'60,000',      change:0.0},
+  gold:  {price:'37,650,000',  change:0.8},
+  foolad:{price:'12,400',      change:-0.6},
+  shasta:{price:'2,875',       change:1.9},
+  felez: {price:'17,000',      change:-1.2},
+  etf:   {price:'18,500',      change:1.5},
+  zafaran:{price:'37,900',     change:0.5},
+  sinergy:{price:'22,150',     change:-0.3},
+  nahal:  {price:'14,800',     change:2.1},
+};
+
+const historyItems = [
+  {label:'واریز به کیف پول', amt:'+2,000,000', cat:'transfer'},
+  {label:'خرید طلا', amt:'-0.42 گرم', cat:'buy'},
+  {label:'تراکنش خرید با کارت', amt:'-350,000', cat:'buy'},
+  {label:'پرداخت قسط وام', amt:'-4,200,000', cat:'transfer'},
+  {label:'تبدیل ریال به کریپتو', amt:'-1,500,000', cat:'buy'},
+  {label:'اقساط BNPL', amt:'-890,000', cat:'transfer'},
+  {label:'فروش طلا', amt:'+0.1 گرم', cat:'sell'},
+  {label:'صدور کارت', amt:null, cat:'request'},
+  {label:'برداشت از کیف پول', amt:'-1,000,000', cat:'transfer'},
+  {label:'درخواست ارسال طلای فیزیکی', amt:null, status:'در حال بررسی', cat:'request'},
+];
+
+const miniApps = [
+  {id:'bnpl', name:'خرید اعتباری', icon:'i-calendar', desc:'خود خرید در چک‌اوت بیرونی اتفاق می‌افتد؛ این مینی‌اپ فقط وضعیت و تاریخچه‌ی اقساط BNPL را نشان می‌دهد.'},
+  {id:'loan', name:'وام', icon:'i-loan', desc:'درخواست/دریافت وام و مدیریت + پرداخت اقساط. طبق تحلیل Red Route هزینه‌ی شکست بالایی دارد، پس نیاز به یادآوری فعال دارد.'},
+  {id:'tracker', name:'دارایی‌های خارج از اپ', icon:'i-clip', desc:'ثبت/ویرایش/حذف دارایی‌های فیزیکی خارج از پلتفرم (سکه، ارز و...). همچنین مقصد طلای فیزیکی پس از تحویل گرفتن از طلای دیجیتال است.'},
+  {id:'prop', name:'املاک', icon:'i-building', desc:'ارزش/موجودی تخمینی ملک فقط داخل همین اپ نمایش داده می‌شود، نه در مجموع دارایی خانه — چون نقدشوندگی «نقد کند» دارد.'},
+];
+const moreApps = [
+  {id:'scoring', name:'امتیاز اعتباری', icon:'i-gauge', desc:'کاربر امتیاز اعتباری خود را می‌بیند و می‌فهمد به چه سطحی از اعتبار دسترسی دارد. صفحه‌ی اول همین مینی‌اپ است.'},
+];
+
+/* Duo-tone mini-app icons: gold base, one white accent per icon */
+function miniIconSVG(id){
+  const base = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+  const MAP = {
+    'i-calendar': `<svg class="icon" viewBox="0 0 24 24" ${base}><rect x="3.5" y="5" width="17" height="15" rx="2.2"/><path class="duo-w" d="M3.5 9.5h17"/></svg>`,
+    'i-percent': `<svg class="icon" viewBox="0 0 24 24" ${base}><path d="M19 5 5 19"/><circle class="duo-w" cx="7.3" cy="7.3" r="2.3"/><circle cx="16.7" cy="16.7" r="2.3"/></svg>`,
+    'i-loan': `<svg class="icon" viewBox="0 0 24 24" ${base}><rect x="2.8" y="6.5" width="18.4" height="11" rx="2.2"/><circle class="duo-w" cx="12" cy="12" r="2.6"/><path d="M6.2 9.3h.01M17.8 14.7h.01"/></svg>`,
+    'i-clip': `<svg class="icon" viewBox="0 0 24 24" ${base}><rect x="5.5" y="4.5" width="13" height="17" rx="2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path class="duo-w" d="M8.5 12h7M8.5 16h5"/></svg>`,
+    'i-building': `<svg class="icon" viewBox="0 0 24 24" ${base}><rect x="5" y="3.5" width="9" height="17" rx="1.4"/><rect class="duo-w" x="14.5" y="9" width="4.5" height="11.5" rx="1.2"/><path d="M8 7.5h.01M11 7.5h.01M8 11h.01M11 11h.01M8 14.5h.01M11 14.5h.01"/></svg>`,
+    'i-gauge': `<svg class="icon" viewBox="0 0 24 24" ${base}><path class="duo-w" d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.1" fill="currentColor" stroke="none"/></svg>`
+  };
+  return MAP[id] || `<svg class="icon"><use href="#${id}"/></svg>`;
+}
+
+function assetAvatarHTML(a){
+  return `<span class="avatar ${a.logo ? 'logo' : ''}" ${a.bg && !a.logo ? `style="background:${a.bg};color:${a.fg};"` : ''}>${a.logo ? `<svg class="icon"><use href="#${a.icon}"/></svg>` : a.glyph ? `<span class="glyph">${a.glyph}</span>` : `<svg class="icon"><use href="#${a.icon}"/></svg>`}</span>`;
+}
+function assetRowHTML(a){
+  return `
+    ${assetAvatarHTML(a)}
+      <span class="meta">
+        <span class="name body-l">${a.name}</span>
+        ${a.tag ? `<span class="sub"><span class="chip tag label-s">${a.tag}</span></span>` : ''}
+      </span>
+      <span class="amounts">
+        <span class="toman body-l">${a.eq ? '<bdi>'+a.eq+'</bdi><span class="cur">تومان</span>' : '<bdi>'+a.amt+'</bdi>'}</span>
+        <span class="unit label-s">${a.eq ? '<bdi>'+a.amt+'</bdi>' : ''}</span>
+      </span>`;
+}
+function renderAssets(){
+  const wrap = document.getElementById('assetList');
+  wrap.innerHTML = assets.map((a,i) => `
+    <button class="asset-row state" data-detail="${a.id}">${assetRowHTML(a)}</button>${i < assets.length-1 ? '<div class="row-div"></div>' : ''}`).join('');
+  wrap.querySelectorAll('.asset-row').forEach(row=>{
+    row.addEventListener('click', ()=> openDetail(row.dataset.detail));
+  });
+}
+
+function renderDebts(){
+  const wrap = document.getElementById('debtList');
+  wrap.innerHTML = debts.map((d,i) => `
+    <div class="debt-row">
+      <span class="avatar"><svg class="icon"><use href="#${d.icon}"/></svg></span>
+      <span class="meta"><span class="name body-l">${d.name}</span><span class="sub body-s">${d.sub}</span></span>
+      <span class="amount body-l"><bdi>${d.amt}</bdi><span class="cur">تومان</span></span>
+    </div>${i===1 ? `<div style="padding:8px 20px 14px;"><button class="btn btn-filled state" id="debtPayBtn" style="width:100%;">پرداخت</button></div>` : ''}`).join('');
+}
+
+function renderOutapp(){
+  const wrap = document.getElementById('outappList');
+  wrap.innerHTML = outapp.map(o => `
+    <button class="asset-row state">
+      <span class="avatar" style="background:var(--md-surface-container-high);color:var(--md-on-surface-variant);"><svg class="icon" style="width:16px;height:16px;"><use href="#i-coin"/></svg></span>
+      <span class="meta"><span class="name body-l">${o.name}</span></span>
+      <span class="amounts"><span class="toman body-m">${o.est}</span></span>
+    </button>`).join('');
+}
+
+function renderFollowedSection(){
+  const section = document.getElementById('followedSection');
+  const starred = assets.filter(a => a.starred);
+  if(starred.length === 0){
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = '';
+  const wrap = document.getElementById('followedList');
+  wrap.innerHTML = starred.map((a,i) => `
+    <button class="asset-row state" data-detail="${a.id}">${assetRowHTML(a)}</button>${i < starred.length-1 ? '<div class="row-div"></div>' : ''}`).join('');
+  wrap.querySelectorAll('.asset-row').forEach(row=>{
+    row.addEventListener('click', ()=> openDetail(row.dataset.detail));
+  });
+  convertBdiToFarsi();
+}
+
+function renderMini(){
+  const wrap = document.getElementById('miniGrid');
+  wrap.innerHTML = miniApps.map(m => `
+    <button class="mini-app state" data-stub="${m.id}">
+      <span class="box">${miniIconSVG(m.icon)}</span>
+      <span class="lbl label-m">${m.name}</span>
+    </button>`).join('') + `
+    <button class="mini-app state" id="miniMoreBtn">
+      <span class="box"><svg class="icon"><use href="#i-dots"/></svg></span>
+      <span class="lbl label-m">بیشتر</span>
+    </button>`;
+  wrap.querySelectorAll('.mini-app[data-stub]').forEach(b=>{
+    b.addEventListener('click', ()=> openStub(b.dataset.stub));
+  });
+  document.getElementById('miniMoreBtn').addEventListener('click', ()=>{
+    closeAllOverlays();
+    document.getElementById('ovMore').classList.add('show');
+  });
+}
+
+function buildMiniChart(id, isUp, w, h, thick, responsive){
+  const color = isUp ? 'var(--md-tertiary)' : 'var(--md-error)';
+  let seed = 7;
+  for(let i=0;i<id.length;i++) seed = (seed * 31 + id.charCodeAt(i)) % 100000;
+  seed += isUp ? 11 : 97;
+  const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+  const n = 8;
+  const points = [];
+  for(let i=0;i<n;i++){
+    const t = i/(n-1);
+    const trendY = isUp ? (h*0.82 - t*h*0.68) : (h*0.14 + t*h*0.68);
+    const noise = (rnd()-0.5) * h*0.34;
+    let y = trendY + noise;
+    y = Math.max(h*0.05, Math.min(h*0.95, y));
+    points.push([t*w, y]);
+  }
+  points[0][1] = isUp ? h*0.8 : h*0.16;
+  points[n-1][1] = isUp ? h*0.12 : h*0.82;
+  let path = `M${points[0][0]},${points[0][1]}`;
+  for(let i=0;i<points.length-1;i++){
+    const [x0,y0]=points[i],[x1,y1]=points[i+1];
+    const cx=(x0+x1)/2;
+    path += ` C${cx},${y0} ${cx},${y1} ${x1},${y1}`;
+  }
+  const [lastX,lastY]=points[points.length-1];
+  const gradId = 'grad'+Math.random().toString(36).slice(2,9);
+  const area = `${path} L${lastX},${h} L0,${h} Z`;
+  const widthAttr = responsive ? '100%' : w;
+  const vb = responsive ? `-1 0 ${w+2} ${h}` : `0 0 ${w} ${h}`;
+  return `<svg viewBox="${vb}" width="${widthAttr}" height="${h}" preserveAspectRatio="none">
+    <defs><linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${color}" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+    </linearGradient></defs>
+    <path d="${area}" fill="url(#${gradId})" stroke="none"/>
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="${thick}" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+const topTradedIds = ['btc','eth','gold','foolad','zafaran','usdt'];
+function renderTopTraded(){
+  const wrap = document.getElementById('topTradedCarousel');
+  wrap.innerHTML = topTradedIds.map(id=>{
+    const a = findMarketAsset(id), m = marketData[id];
+    if(!a || !m) return '';
+    const up = m.change >= 0;
+    const cls = up ? 'up' : 'down';
+    const icon = up ? 'i-tx-in' : 'i-tx-out';
+    const pct = Math.abs(m.change).toFixed(1) + '٪';
+    return `<button class="mkt-top-card state" data-detail="${id}">
+      <span class="row1"><span class="mkt-top-avatar">${assetAvatarHTML(a)}</span><span class="name">${a.name}</span></span>
+      <span class="price-block">
+        <span class="price"><bdi>${m.price}</bdi></span>
+        <span class="pct ${cls}"><svg class="icon"><use href="#${icon}"/></svg><bdi>${pct}</bdi></span>
+      </span>
+      <span class="chart-wrap">${buildMiniChart(id,up,126,52,2.2,true)}</span>
+    </button>`;
+  }).join('');
+  wrap.querySelectorAll('.mkt-top-card').forEach(c=> c.addEventListener('click', ()=> openDetail(c.dataset.detail)));
+  convertBdiToFarsi();
+}
+
+let catFilter = 'all';
+const catCycle = ['all','crypto','stock','gold','etf'];
+const catLabel = {all:'همه', crypto:'رمزارز', stock:'سهام', gold:'طلا', etf:'ETF'};
+let sortDesc = true;
+
+function renderMarketList(){
+  let list = assets.filter(a => marketData[a.id]);
+  if(catFilter !== 'all') list = list.filter(a => a.cat === catFilter);
+  list.sort((a,b)=>{
+    const va = parseFloat(String(a.eq||'0').replace(/,/g,'')) || 0;
+    const vb = parseFloat(String(b.eq||'0').replace(/,/g,'')) || 0;
+    return sortDesc ? vb - va : va - vb;
+  });
+  const wrap = document.getElementById('marketList');
+  if(list.length === 0){
+    wrap.innerHTML = `<div class="body-m" style="padding:34px 20px;text-align:center;color:var(--md-on-surface-variant);">موردی یافت نشد</div>`;
+    return;
+  }
+  wrap.innerHTML = list.map((a,i)=>{
+    const m = marketData[a.id];
+    const up = m.change >= 0;
+    const cls = up ? 'up' : 'down';
+    const pct = Math.abs(m.change).toFixed(1) + '٪';
+    return `<button class="mkt-list-row state" data-detail="${a.id}">
+      <span class="mkt-list-avatar">${assetAvatarHTML(a)}</span>
+      <span class="meta">
+        <span class="name">${a.name}</span>
+        <span class="sub">حجم ۲۴ساعت: ${a.vol || '—'}</span>
+      </span>
+      <span class="right">
+        <span class="price"><bdi>${m.price}</bdi></span>
+        <span class="chart-pct">
+          ${buildMiniChart(a.id,up,52,22,1.8,false)}
+          <span class="pct ${cls}"><bdi>${pct}</bdi></span>
+        </span>
+      </span>
+    </button>${i<list.length-1?'<div class="row-div"></div>':''}`;
+  }).join('');
+  wrap.querySelectorAll('.mkt-list-row').forEach(r=> r.addEventListener('click', ()=> openDetail(r.dataset.detail)));
+  convertBdiToFarsi();
+}
+
+document.getElementById('catFilterChip').addEventListener('click', ()=>{
+  catFilter = catCycle[(catCycle.indexOf(catFilter)+1) % catCycle.length];
+  document.getElementById('catFilterLabel').textContent = catLabel[catFilter];
+  renderMarketList();
+});
+document.getElementById('sortFilterChip').addEventListener('click', ()=>{
+  sortDesc = !sortDesc;
+  document.getElementById('sortArrowIcon').classList.toggle('flipped', !sortDesc);
+  renderMarketList();
+});
+
+function renderMoreGrid(){
+  const wrap = document.getElementById('moreGrid');
+  wrap.innerHTML = moreApps.map(m => `
+    <button class="mini-app state" data-stub="${m.id}">
+      <span class="box">${miniIconSVG(m.icon)}</span>
+      <span class="lbl label-m">${m.name}</span>
+    </button>`).join('');
+  wrap.querySelectorAll('.mini-app').forEach(b=>{
+    b.addEventListener('click', ()=> openStub(b.dataset.stub));
+  });
+}
+
+function renderHistoryList(cat){
+  const wrap = document.getElementById('historyList');
+  const list = cat==='all' ? historyItems : historyItems.filter(h=>h.cat===cat);
+  if(list.length===0){
+    wrap.innerHTML = `<div class="body-m" style="padding:34px 20px;text-align:center;color:var(--md-on-surface-variant);">موردی یافت نشد</div>`;
+    return;
+  }
+  wrap.innerHTML = list.map(h=>{
+    const right = h.amt ? txAmountHTML(h.amt) : (h.status ? `<span class="label-s" style="color:var(--md-on-surface-variant);">${h.status}</span>` : '<bdi>—</bdi>');
+    return `<div class="hist-row"><span class="l">${h.label}</span><span class="r">${right}</span></div>`;
+  }).join('');
+  convertBdiToFarsi();
+}
+document.querySelectorAll('#historyFilterTabs .filter-chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('#historyFilterTabs .filter-chip').forEach(x=>x.classList.remove('active'));
+    chip.classList.add('active');
+    renderHistoryList(chip.dataset.cat);
+  });
+});
+
+function txAmountHTML(raw){
+  const t = String(raw).trim();
+  if(t.startsWith('-')) return `<span class="tx-amt out"><bdi>${t.slice(1)}</bdi><svg class="icon"><use href="#i-tx-out"/></svg></span>`;
+  if(t.startsWith('+')) return `<span class="tx-amt in"><bdi>${t.slice(1)}</bdi><svg class="icon"><use href="#i-tx-in"/></svg></span>`;
+  return `<bdi>${t}</bdi>`;
+}
+function faDigits(s){
+  const map = {'0':'۰','1':'۱','2':'۲','3':'۳','4':'۴','5':'۵','6':'۶','7':'۷','8':'۸','9':'۹'};
+  return String(s).replace(/[0-9]/g, d => map[d]);
+}
+function convertBdiToFarsi(){
+  document.querySelectorAll('bdi').forEach(el=>{ el.textContent = faDigits(el.textContent); });
+}
+
+renderAssets(); renderDebts(); renderOutapp(); renderFollowedSection(); renderMini(); renderMoreGrid(); renderTopTraded(); renderMarketList(); renderHistoryList('all');
+convertBdiToFarsi();
+
+/* ---- card carousel (single card at a time, swipeable) ---- */
+let cardIndex = 0;
+const cardCarousel = document.getElementById('cardCarousel');
+const cardDots = document.querySelectorAll('.card-dots .dot');
+const cardLinkedNote = document.getElementById('cardLinkedNote');
+const cardPrevBtn = document.getElementById('cardPrevBtn');
+const cardNextBtn = document.getElementById('cardNextBtn');
+
+function updateCard(){
+  cardCarousel.style.transform = `translateX(${cardIndex===0 ? '0%' : '-100%'})`;
+  cardDots.forEach((d,i)=> d.classList.toggle('active', i===cardIndex));
+  cardLinkedNote.classList.toggle('show', cardIndex===1);
+  cardPrevBtn.classList.toggle('disabled', cardIndex===0);
+  cardNextBtn.classList.toggle('disabled', cardIndex===1);
+}
+cardPrevBtn.addEventListener('click', ()=>{ if(cardIndex>0){ cardIndex--; updateCard(); } });
+cardNextBtn.addEventListener('click', ()=>{ if(cardIndex<1){ cardIndex++; updateCard(); } });
+cardDots.forEach(d=>{
+  d.addEventListener('click', ()=>{ cardIndex = +d.dataset.idx; updateCard(); });
+});
+(function(){
+  const wrap = document.getElementById('cardCarouselWrap');
+  let startX = 0, dragging = false;
+  wrap.addEventListener('pointerdown', e=>{ dragging = true; startX = e.clientX; });
+  wrap.addEventListener('pointerup', e=>{
+    if(!dragging) return; dragging = false;
+    const dx = e.clientX - startX;
+    if(dx < -35 && cardIndex < 1) cardIndex++;
+    else if(dx > 35 && cardIndex > 0) cardIndex--;
+    updateCard();
+  });
+  wrap.addEventListener('pointercancel', ()=> dragging = false);
+})();
+updateCard();
+
+/* ---- hero slideshows (home + services: auto + swipe + dots) ---- */
+function initHero(trackId, dotsId, viewportId){
+  var track = document.getElementById(trackId);
+  if(!track) return;
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#' + dotsId + ' .hero-dot'));
+  var viewport = document.getElementById(viewportId);
+  var n = track.children.length, idx = 0, timer = null;
+  function go(i){
+    idx = (i + n) % n;
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dots.forEach(function(d, k){ d.classList.toggle('active', k === idx); });
+  }
+  function play(){ stop(); timer = setInterval(function(){ go(idx + 1); }, 4500); }
+  function stop(){ if(timer) clearInterval(timer); timer = null; }
+  dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.dataset.idx); play(); }); });
+  var sx = 0, dragging = false;
+  viewport.addEventListener('pointerdown', function(e){ dragging = true; sx = e.clientX; stop(); });
+  viewport.addEventListener('pointerup', function(e){
+    if(!dragging) return; dragging = false;
+    var dx = e.clientX - sx;
+    if(dx < -35) go(idx + 1); else if(dx > 35) go(idx - 1);
+    play();
+  });
+  viewport.addEventListener('pointercancel', function(){ dragging = false; play(); });
+  viewport.addEventListener('pointerenter', stop);
+  viewport.addEventListener('pointerleave', play);
+  go(0); play();
+}
+initHero('heroTrack', 'heroDots', 'heroViewport');
+initHero('svcTrack', 'svcDots', 'svcViewport');
+
+/* ---- privacy eye: mask home numbers ---- */
+(function(){
+  var btn = document.getElementById('privacyToggle');
+  if(!btn) return;
+  var hidden = false;
+  function setHidden(h){
+    hidden = h;
+    document.querySelectorAll('.app-screen[data-screen="home"] bdi').forEach(function(el){
+      if(h){
+        if(el.dataset.orig === undefined) el.dataset.orig = el.textContent;
+        el.textContent = el.dataset.orig.replace(/[0-9\u06F0-\u06F9]/g, '\u2022');
+      } else if(el.dataset.orig !== undefined){
+        el.textContent = el.dataset.orig;
+      }
+    });
+    var use = document.getElementById('privacyIcon');
+    if(use) use.setAttribute('href', h ? '#i-eye-off' : '#i-eye');
+    btn.setAttribute('aria-label', h ? 'نمایش مبالغ' : 'مخفی‌کردن مبالغ');
+  }
+  btn.addEventListener('click', function(){ setHidden(!hidden); });
+})();
+
+/* ---- tabs ---- */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.app-screen').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelector(`.app-screen[data-screen="${t.dataset.tab}"]`).classList.add('active');
+    closeAllOverlays();
+    closeAllSheets();
+  });
+});
+
+/* ---- overlays ---- */
+function closeAllOverlays(){ document.querySelectorAll('.overlay').forEach(o=>o.classList.remove('show')); }
+function closeAllSheets(){ document.querySelectorAll('.sheet, .sheet-backdrop').forEach(o=>o.classList.remove('show')); }
+document.querySelectorAll('.back-btn').forEach(b=>b.addEventListener('click', closeAllOverlays));
+
+function buildAssetChartSVG(a){
+  const isUp = typeof a.pnlPercent === 'number' ? a.pnlPercent >= 0 : true;
+  const color = isUp ? 'var(--md-tertiary)' : 'var(--md-error)';
+  const points = isUp
+    ? [[0,66],[40,58],[80,62],[120,44],[160,50],[200,30],[240,38],[280,17],[320,14]]
+    : [[0,14],[40,24],[80,19],[120,34],[160,27],[200,44],[240,39],[280,54],[320,60]];
+  let path = `M${points[0][0]},${points[0][1]}`;
+  for(let i=0;i<points.length-1;i++){
+    const [x0,y0] = points[i], [x1,y1] = points[i+1];
+    const cx = (x0+x1)/2;
+    path += ` C${cx},${y0} ${cx},${y1} ${x1},${y1}`;
+  }
+  const [lastX,lastY] = points[points.length-1];
+  const areaPath = `${path} L${lastX},90 L0,90 Z`;
+  return `<svg viewBox="0 0 320 90" width="100%" height="90">
+    <defs>
+      <linearGradient id="assetChartGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${color}" stop-opacity="0.32"/>
+        <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="${areaPath}" fill="url(#assetChartGrad)" stroke="none"/>
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lastX}" cy="${lastY}" r="7" fill="${color}" opacity="0.18"/>
+    <circle cx="${lastX}" cy="${lastY}" r="3.2" fill="${color}"/>
+  </svg>`;
+}
+function buildFakeQR(){
+  const size = 21, cell = 8, viewSize = size * cell;
+  let rects = '';
+  const finder = (fx, fy) => {
+    rects += `<rect x="${fx*cell}" y="${fy*cell}" width="${7*cell}" height="${7*cell}" fill="#000"/>`;
+    rects += `<rect x="${(fx+1)*cell}" y="${(fy+1)*cell}" width="${5*cell}" height="${5*cell}" fill="#fff"/>`;
+    rects += `<rect x="${(fx+2)*cell}" y="${(fy+2)*cell}" width="${3*cell}" height="${3*cell}" fill="#000"/>`;
+  };
+  finder(0, 0); finder(size - 7, 0); finder(0, size - 7);
+  let seed = 42;
+  const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+  for(let y = 0; y < size; y++){
+    for(let x = 0; x < size; x++){
+      const inTL = x < 8 && y < 8, inTR = x >= size - 8 && y < 8, inBL = x < 8 && y >= size - 8;
+      if(inTL || inTR || inBL) continue;
+      if(rnd() > 0.55) rects += `<rect x="${x*cell}" y="${y*cell}" width="${cell}" height="${cell}" fill="#000"/>`;
+    }
+  }
+  return `<svg viewBox="0 0 ${viewSize} ${viewSize}" width="180" height="180">${rects}</svg>`;
+}
+function openReceive(id){
+  const a = findMarketAsset(id);
+  if(!a) return;
+  document.getElementById('recvRow').innerHTML = assetRowHTML(a);
+  document.getElementById('recvQR').innerHTML = buildFakeQR();
+  document.getElementById('recvLabel').textContent = a.receiveLabel || '—';
+  document.getElementById('recvValue').textContent = a.receiveValue || '—';
+  convertBdiToFarsi();
+  closeAllOverlays();
+  document.getElementById('ovReceive').classList.add('show');
+}
+document.getElementById('recvCopyBtn').addEventListener('click', ()=>{
+  const text = document.getElementById('recvValue').textContent;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).catch(()=>{});
+  }
+});
+
+let currentDetailId = null;
+document.getElementById('dStarBtn').addEventListener('click', ()=>{
+  const a = findMarketAsset(currentDetailId);
+  if(!a) return;
+  a.starred = !a.starred;
+  document.getElementById('dStarBtn').classList.toggle('active', a.starred);
+  renderFollowedSection();
+});
+function openDetail(id){
+  const a = findMarketAsset(id);
+  if(!a) return;
+  currentDetailId = id;
+  document.getElementById('dStarBtn').classList.toggle('active', !!a.starred);
+  document.getElementById('dRow').innerHTML = assetRowHTML(a);
+  const pnlEl = document.getElementById('dPnl');
+  if(a.id === 'wallet' || typeof a.pnlPercent !== 'number'){
+    pnlEl.innerHTML = '';
+  } else {
+    const up = a.pnlPercent > 0, flat = a.pnlPercent === 0;
+    const cls = flat ? '' : (up ? 'up' : 'down');
+    const icon = up ? 'i-tx-in' : 'i-tx-out';
+    const eqNum = parseFloat(String(a.eq).replace(/,/g, '')) || 0;
+    const pnlAmount = Math.round(eqNum * a.pnlPercent / 100);
+    const amountStr = Math.abs(pnlAmount).toLocaleString('en-US');
+    pnlEl.innerHTML = `<div class="pnl-card">
+      <span class="pnl-label label-m">سود/ضرر</span>
+      <span class="pnl-value-row">
+        <span class="pnl-amount body-l"><bdi>${amountStr}</bdi> تومان</span>
+        <span class="pnl-percent ${cls}">${flat ? '' : `<svg class="icon"><use href="#${icon}"/></svg>`}<bdi>${Math.abs(a.pnlPercent).toFixed(1)}٪</bdi></span>
+      </span>
+    </div>`;
+  }
+  const vis = document.getElementById('dVisual');
+  if(a.chart==='trend' || a.chart==='price'){
+    const ranges = ['۱ ساعت','۱ روز','۱ هفته','۱ ماه','۳ ماه','۱ سال','همه'];
+    vis.innerHTML = `<div class="chart-wrap">${buildAssetChartSVG(a)}</div>
+    <div class="filter-tabs">${ranges.map((r,i)=>`<button class="filter-chip range-chip state${i===1?' active':''}">${r}</button>`).join('')}</div>`;
+    vis.querySelectorAll('.range-chip').forEach(c=>{
+      c.addEventListener('click', ()=>{
+        vis.querySelectorAll('.range-chip').forEach(x=>x.classList.remove('active'));
+        c.classList.add('active');
+      });
+    });
+  } else {
+    vis.innerHTML = `<div class="alt-wrap body-m">این دارایی قیمت لحظه‌ای بازار ندارد؛ به‌جای چارت، وضعیت/ارزش تخمینی نمایش داده می‌شود.</div>`;
+  }
+  document.getElementById('dHist').innerHTML = a.hist.map(h=>`
+    <div class="hist-row body-m"><span class="l">${h[0]}</span><span class="r">${txAmountHTML(h[1])}</span></div>`).join('');
+  const actionIconMap = {'افزودن':'i-buy','برداشت':'i-withdraw','خرید':'i-buy','فروش':'i-sell','تحویل فیزیکی':'i-package','دریافت':'i-qr'};
+  document.getElementById('dActions').innerHTML = a.actions.map(x=>
+    `<button class="nav-island-item ${x.p ? 'primary':''} state" data-act="${x.l}"><svg class="icon"><use href="#${actionIconMap[x.l] || 'i-dots'}"/></svg><span class="label-s">${x.l}</span></button>`).join('');
+  document.querySelectorAll('#dActions .nav-island-item').forEach(btn=>{
+    if(btn.dataset.act === 'دریافت') btn.addEventListener('click', ()=> openReceive(a.id));
+  });
+  convertBdiToFarsi();
+  closeAllOverlays();
+  document.getElementById('ovDetail').classList.add('show');
+}
+
+function openStub(id){
+  const m = [...miniApps, ...moreApps].find(x=>x.id===id);
+  if(!m) return;
+  document.getElementById('sTitle').textContent = m.name;
+  document.getElementById('sIcon').innerHTML = `<svg class="icon"><use href="#${m.icon}"/></svg>`;
+  document.getElementById('sHead').textContent = m.name;
+  document.getElementById('sDesc').textContent = m.desc;
+  closeAllOverlays();
+  document.getElementById('ovStub').classList.add('show');
+}
+
+document.getElementById('actConvert').addEventListener('click', ()=>{
+  addPickerMode = 'send';
+  openAddPicker('انتخاب دارایی');
+});
+function openScan(){ closeAllOverlays(); document.getElementById('ovPay').classList.add('show'); }
+document.getElementById('homeQrBtn').addEventListener('click', openScan);
+document.getElementById('cardQrBtn').addEventListener('click', openScan);
+function openSendDestination(id){
+  const a = findMarketAsset(id);
+  if(!a) return;
+  document.getElementById('sendRow').innerHTML = assetRowHTML(a);
+  document.getElementById('sendDestLabel').textContent = (a.receiveLabel || 'مقصد') + ' مقصد';
+  document.getElementById('sendDestInput').placeholder = a.receiveLabel ? (a.receiveLabel + ' گیرنده را وارد کنید') : 'وارد کنید';
+  document.getElementById('sendDestInput').value = '';
+  document.getElementById('sendAmountInput').value = '';
+  convertBdiToFarsi();
+  closeAllOverlays();
+  document.getElementById('ovSendDestination').classList.add('show');
+}
+document.getElementById('sendConfirmBtn').addEventListener('click', ()=>{
+  closeAllOverlays();
+});
+document.getElementById('actHistory').addEventListener('click', ()=>{ closeAllOverlays(); document.getElementById('ovHistory').classList.add('show'); });
+document.getElementById('actPay').addEventListener('click', ()=>{
+  openConvert();
+});
+
+/* ---- convert screen ---- */
+let convFromId = 'wallet';
+let convToId = 'gold';
+function getUnitPrice(id){
+  if(id === 'wallet') return 1;
+  const m = marketData[id];
+  return m ? parseFloat(String(m.price).replace(/,/g, '')) : null;
+}
+function renderConvertCards(){
+  const fa = findMarketAsset(convFromId);
+  const ta = findMarketAsset(convToId);
+  if(fa){
+    document.getElementById('convFromAvatar').innerHTML = assetAvatarHTML(fa);
+    document.getElementById('convFromName').textContent = fa.name;
+  }
+  if(ta){
+    document.getElementById('convToAvatar').innerHTML = assetAvatarHTML(ta);
+    document.getElementById('convToName').textContent = ta.name;
+  }
+  updateConvertCalc();
+}
+function updateConvertCalc(){
+  const raw = document.getElementById('convFromInput').value.replace(/,/g, '');
+  const amt = parseFloat(raw) || 0;
+  const pFrom = getUnitPrice(convFromId);
+  const pTo = getUnitPrice(convToId);
+  let resultStr = '0';
+  if(pFrom && pTo && amt > 0){
+    resultStr = (amt * pFrom / pTo).toLocaleString('en-US', {maximumFractionDigits:4});
+  }
+  document.getElementById('convToDisplay').textContent = faDigits(resultStr);
+}
+function selectConvertAsset(side, id){
+  if(side === 'from') convFromId = id; else convToId = id;
+  renderConvertCards();
+  closeAllOverlays();
+  document.getElementById('ovConvert').classList.add('show');
+}
+function openConvert(){
+  closeAllOverlays();
+  document.getElementById('convFromInput').value = '';
+  renderConvertCards();
+  document.getElementById('ovConvert').classList.add('show');
+}
+document.getElementById('convFromCard').addEventListener('click', ()=>{
+  addPickerMode = 'convert-from';
+  openAddPicker('انتخاب دارایی مبدأ');
+});
+document.getElementById('convToCard').addEventListener('click', ()=>{
+  addPickerMode = 'convert-to';
+  openAddPicker('انتخاب دارایی مقصد');
+});
+document.getElementById('convSwapBtn').addEventListener('click', ()=>{
+  [convFromId, convToId] = [convToId, convFromId];
+  renderConvertCards();
+});
+document.getElementById('convFromInput').addEventListener('input', updateConvertCalc);
+document.getElementById('convConfirmBtn').addEventListener('click', ()=>{
+  closeAllOverlays();
+});
+let addPickerMode = 'browse';
+function openAddPicker(title){
+  closeAllOverlays();
+  document.getElementById('addPickerTitle').textContent = title || 'افزودن';
+  addActiveCat = 'all';
+  document.querySelectorAll('#addFilterTabs .filter-chip').forEach(x=>x.classList.remove('active'));
+  document.querySelector('#addFilterTabs .filter-chip[data-cat="all"]').classList.add('active');
+  document.getElementById('addSearchInput').value = '';
+  renderAddList();
+  document.getElementById('ovAddPicker').classList.add('show');
+}
+document.getElementById('marketSearchBtn').addEventListener('click', ()=>{
+  addPickerMode = 'browse';
+  openAddPicker('جستجو');
+});
+
+/* ---- add-asset picker (tabs + search) ---- */
+let addActiveCat = 'all';
+function renderAddList(){
+  const term = document.getElementById('addSearchInput').value.trim().toLowerCase();
+  const filtered = assets.filter(a=>{
+    const matchCat = addActiveCat==='all' || a.cat===addActiveCat;
+    const matchTerm = !term || a.name.toLowerCase().includes(term) || (a.amt && a.amt.toLowerCase().includes(term));
+    return matchCat && matchTerm;
+  });
+  const wrap = document.getElementById('addAssetList');
+  if(filtered.length===0){
+    wrap.innerHTML = `<div class="body-m" style="padding:34px 20px;text-align:center;color:var(--md-on-surface-variant);">دارایی‌ای پیدا نشد</div>`;
+    return;
+  }
+  wrap.innerHTML = filtered.map((a,i)=>`
+    <button class="asset-row state" data-detail="${a.id}">${assetRowHTML(a)}</button>${i<filtered.length-1?'<div class="row-div"></div>':''}`).join('');
+  wrap.querySelectorAll('.asset-row').forEach(row=>{
+    row.addEventListener('click', ()=>{
+      if(addPickerMode === 'select') selectBuySellAsset(row.dataset.detail);
+      else if(addPickerMode === 'send') openSendDestination(row.dataset.detail);
+      else if(addPickerMode === 'convert-from') selectConvertAsset('from', row.dataset.detail);
+      else if(addPickerMode === 'convert-to') selectConvertAsset('to', row.dataset.detail);
+      else openDetail(row.dataset.detail);
+    });
+  });
+  convertBdiToFarsi();
+}
+document.querySelectorAll('#addFilterTabs .filter-chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('#addFilterTabs .filter-chip').forEach(x=>x.classList.remove('active'));
+    chip.classList.add('active');
+    addActiveCat = chip.dataset.cat;
+    renderAddList();
+  });
+});
+document.getElementById('addSearchInput').addEventListener('input', renderAddList);
+
+/* ---- buy/sell screen ---- */
+let bsSide = 'buy';
+let bsAmount = '';
+let currentBuySellAsset = 'gold';
+
+function renderBuySellAssetCard(){
+  const a = findMarketAsset(currentBuySellAsset);
+  if(!a) return;
+  document.getElementById('bsAssetAvatar').innerHTML = assetAvatarHTML(a);
+  document.getElementById('bsAssetName').textContent = a.name;
+}
+function updateBsAmountDisplay(){
+  const parts = bsAmount.split('.');
+  const intPart = (parts[0] || '0').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const decPart = parts.length > 1 ? '.' + parts[1] : '';
+  document.getElementById('bsAmountDisplay').innerHTML = `<bdi>${intPart}${decPart}</bdi> <span class="unit">تومان</span>`;
+  const valid = bsAmount.length > 0 && parseFloat(bsAmount) > 0;
+  document.getElementById('bsConfirmBtn').disabled = !valid;
+  convertBdiToFarsi();
+}
+function openBuySell(){
+  closeAllOverlays();
+  bsSide = 'buy';
+  document.querySelectorAll('#bsTabs .filter-chip').forEach(x=>x.classList.remove('active'));
+  document.querySelector('#bsTabs .filter-chip[data-side="buy"]').classList.add('active');
+  document.getElementById('bsConfirmBtn').textContent = 'خرید';
+  document.querySelector('.bs-amount-label').textContent = 'مبلغ خرید';
+  bsAmount = '';
+  updateBsAmountDisplay();
+  renderBuySellAssetCard();
+  document.getElementById('ovBuySell').classList.add('show');
+}
+document.getElementById('actAdd').addEventListener('click', ()=>{
+  openBuySell();
+});
+document.querySelectorAll('#bsTabs .filter-chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('#bsTabs .filter-chip').forEach(x=>x.classList.remove('active'));
+    chip.classList.add('active');
+    bsSide = chip.dataset.side;
+    const label = bsSide === 'buy' ? 'خرید' : 'فروش';
+    document.getElementById('bsConfirmBtn').textContent = label;
+    document.querySelector('.bs-amount-label').textContent = 'مبلغ ' + label;
+  });
+});
+document.getElementById('bsAssetCard').addEventListener('click', ()=>{
+  addPickerMode = 'select';
+  openAddPicker('انتخاب دارایی');
+});
+document.querySelectorAll('.bs-key').forEach(k=>{
+  k.addEventListener('click', ()=>{
+    const v = k.dataset.k;
+    if(v === 'back') bsAmount = bsAmount.slice(0, -1);
+    else if(v === '.') { if(!bsAmount.includes('.')) bsAmount += '.'; }
+    else bsAmount += v;
+    updateBsAmountDisplay();
+  });
+});
+function selectBuySellAsset(id){
+  const a = findMarketAsset(id);
+  if(!a) return;
+  currentBuySellAsset = id;
+  renderBuySellAssetCard();
+  closeAllOverlays();
+  document.getElementById('ovBuySell').classList.add('show');
+}
+
+/* ---- account sheet ---- */
+const sheet = document.getElementById('accountSheet');
+const backdrop = document.getElementById('sheetBackdrop');
+document.getElementById('openAccountSheet').addEventListener('click', ()=>{
+  sheet.classList.add('show'); backdrop.classList.add('show');
+});
+backdrop.addEventListener('click', ()=>{ sheet.classList.remove('show'); backdrop.classList.remove('show'); });
+
+/* ---- card "more" sheet ---- */
+const cardMoreSheet = document.getElementById('cardMoreSheet');
+const cardMoreBackdrop = document.getElementById('cardMoreBackdrop');
+document.getElementById('cardActMore').addEventListener('click', ()=>{
+  cardMoreSheet.classList.add('show'); cardMoreBackdrop.classList.add('show');
+});
+cardMoreBackdrop.addEventListener('click', ()=>{ cardMoreSheet.classList.remove('show'); cardMoreBackdrop.classList.remove('show'); });
+
+
+/* ---- theme switch (dark/light, remembered per variation) ---- */
+(function(){
+  var KEY = 'milli-v3-theme';
+  var DEFAULT = 'light';
+  function current(){
+    try {
+      var q = new URLSearchParams(location.search).get('theme');
+      if(q === 'dark' || q === 'light') return q;
+      return localStorage.getItem(KEY) || DEFAULT;
+    }
+    catch(e){ return DEFAULT; }
+  }
+  function paint(){
+    applyTheme(current());
+  }
+  function applyTheme(t){
+    document.body.dataset.theme = t;
+    document.querySelectorAll('.theme-btn').forEach(function(b){
+      var on = b.dataset.setTheme === t;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    var meta = document.querySelector('meta[name="color-scheme"]');
+    if(meta) meta.setAttribute('content', t);
+  }
+  document.querySelectorAll('.theme-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      try { localStorage.setItem(KEY, b.dataset.setTheme); } catch(e){}
+      paint();
+    });
+  });
+  window.addEventListener('message', function(ev){
+    try {
+      var d = ev.data;
+      if(d && d.type === 'milli-theme' && (d.theme === 'dark' || d.theme === 'light')){
+        try { localStorage.setItem(KEY, d.theme); } catch(e){}
+        applyTheme(d.theme);
+      }
+    } catch(e){}
+  });
+  paint();
+
+  try {
+    var qTab = new URLSearchParams(location.search).get('tab');
+    if(qTab){
+      var targetTab = document.querySelector(`.tab[data-tab="${qTab}"]`);
+      if(targetTab) targetTab.click();
+    }
+  } catch(e){}
+})();
+
+</script>
+</body>
+</html>

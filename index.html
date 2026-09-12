@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>میلی سوپراپ — گالری نسخه‌های طراحی</title>
+<style>
+@font-face{
+  font-family:'Yekan Bakh';
+  src:url('./assets/fonts/YekanBakh-VF.ttf') format('truetype-variations');
+  font-weight:100 950;
+  font-style:normal;
+  font-display:swap;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{font-family:'Yekan Bakh',sans-serif;background:#0B0C10;color:#f4f4f5;display:flex;height:100vh;overflow:hidden}
+/* پنل راست: تنظیمات نسخه + توضیح کانسپت */
+aside{width:300px;flex-shrink:0;background:#111114;border-inline-end:1px solid #27272a;padding:18px 16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+aside h1{font-size:15px;font-weight:700;margin:0}
+aside h1 span{display:block;font-weight:400;color:#a1a1aa;font-size:12px;margin-top:2px}
+.controls{display:flex;flex-direction:column;gap:8px}
+label{font-size:12.5px;color:#d4d4d8}
+select{font-family:inherit;font-size:13px;font-weight:600;background:#1c1c21;color:#fafafa;border:1px solid #3f3f46;border-radius:10px;padding:10px 12px;cursor:pointer;width:100%}
+select:focus-visible{outline:2px solid #FFB100;outline-offset:2px}
+.badge{align-self:flex-start;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,177,0,.14);color:#FDE68A;border:1px solid rgba(255,177,0,.4)}
+.desc{font-size:12px;line-height:1.9;color:#a1a1aa;background:#18181b;border:1px solid #27272a;border-radius:12px;padding:10px 12px;margin:0}
+a.open{font-size:12.5px;color:#FDE68A;text-decoration:none;border:1px solid rgba(255,177,0,.4);border-radius:10px;padding:9px 12px;text-align:center}
+a.open:hover{background:rgba(255,177,0,.12)}
+.hint{font-size:11px;color:#71717a;line-height:1.8}
+.theme-seg{display:flex;background:#1c1c21;border:1px solid #3f3f46;border-radius:12px;padding:3px;gap:4px}
+.theme-btn{flex:1;font-family:inherit;font-size:12.5px;font-weight:700;border:none;background:none;color:#a1a1aa;padding:9px 8px;border-radius:9px;cursor:pointer}
+.theme-btn.active{background:#FFB100;color:#021065}
+main{flex:1;min-height:0}
+iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+@media (max-width:768px){
+  body{flex-direction:column}
+  aside{width:100%;border-inline-end:0;border-bottom:1px solid #27272a;max-height:44vh}
+}
+</style>
+</head>
+<body>
+<aside>
+  <h1>میلی سوپراپ <span>گالری نسخه‌های طراحی</span></h1>
+  <div class="controls">
+    <label for="variantSelect">نسخه:</label>
+    <select id="variantSelect" aria-label="انتخاب نسخه طراحی">
+      <option value="v3" selected>برتر — Obsidian Editorial</option>
+      <option value="v5">۵ — گرادیان سرمه‌ای</option>
+    </select>
+    <span class="badge" id="variantBadge">v3 · برگزیده</span>
+  </div>
+  <p class="desc" id="variantDesc">کانسپت آبسیدین مدرن (#0B0C10)؛ ارزیابی‌شده با design-md.</p>
+  <div class="controls">
+    <label>تم نمایش:</label>
+    <div class="theme-seg" role="group" aria-label="انتخاب تم روشن یا تیره">
+      <button class="theme-btn" id="themeLight" type="button">روشن</button>
+      <button class="theme-btn" id="themeDark" type="button">تیره</button>
+    </div>
+  </div>
+  <a class="open" id="openLink" href="./variations/v3/" target="_blank" rel="noopener">باز کردن در تب جدید</a>
+  <span class="hint">v3 نسخه برگزیده است؛ v5 هیروی گرادیانی سرمه‌ای (روشن/تیره) روی همان پایه دارد.</span>
+</aside>
+<main>
+  <iframe id="stage" title="پیش‌نمایش نسخه طراحی" src="./variations/v3/"></iframe>
+</main>
+<script>
+(function(){
+  var META = {
+    v3: { path: './variations/v3/', badge: 'v3 · برگزیده',
+          desc: 'کانسپت آبسیدین مدرن (#0B0C10)؛ ارزیابی‌شده با design-md.' },
+    v5: { path: './variations/v5/', badge: 'v5 · گرادیان سرمه‌ای',
+          desc: 'هیروی گرادیانی سرمه‌ای (روشن/تیره) بر پایه v3.' }
+  };
+  var select = document.getElementById('variantSelect');
+  var stage = document.getElementById('stage');
+  var badge = document.getElementById('variantBadge');
+  var desc = document.getElementById('variantDesc');
+  var openLink = document.getElementById('openLink');
+  var themeLight = document.getElementById('themeLight');
+  var themeDark = document.getElementById('themeDark');
+
+  function themeKey(){ return 'milli-' + select.value + '-theme'; }
+  function currentTheme(){
+    try {
+      var q = new URLSearchParams(location.search).get('theme');
+      if(q === 'dark' || q === 'light') return q;
+      return localStorage.getItem(themeKey()) || 'light';
+    } catch(e){ return 'light'; }
+  }
+  function paintTheme(){
+    var t = currentTheme();
+    themeLight.classList.toggle('active', t === 'light');
+    themeDark.classList.toggle('active', t === 'dark');
+  }
+  function setTheme(t){
+    try { localStorage.setItem(themeKey(), t); } catch(e){}
+    try {
+      var u = new URL(stage.src, location.href);
+      u.searchParams.set('theme', t);
+      if(stage.contentWindow) stage.contentWindow.postMessage({type:'milli-theme', theme:t}, '*');
+    } catch(e){}
+    paintTheme();
+  }
+  themeLight.addEventListener('click', function(){ setTheme('light'); });
+  themeDark.addEventListener('click', function(){ setTheme('dark'); });
+  stage.addEventListener('load', paintTheme);
+
+  function apply(v, push){
+    if(!META[v]) v = 'v3';
+    select.value = v;
+    var th = currentTheme();
+    stage.src = META[v].path + '?theme=' + th;
+    badge.textContent = META[v].badge;
+    desc.textContent = META[v].desc;
+    openLink.href = META[v].path + '?theme=' + th;
+    try { localStorage.setItem('milli-variant', v); } catch(e){}
+    if(push !== false){
+      var u = new URL(location.href);
+      u.searchParams.set('v', v);
+      history.replaceState(null, '', u.toString());
+    }
+    paintTheme();
+  }
+  select.addEventListener('change', function(){ apply(select.value); });
+  var initial = 'v3';
+  try {
+    var q = new URLSearchParams(location.search).get('v');
+    var saved = localStorage.getItem('milli-variant');
+    initial = META[q] ? q : (META[saved] ? saved : 'v3');
+  } catch(e){}
+  apply(initial, false);
+})();
+</script>
+</body>
+</html>
