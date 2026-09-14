@@ -200,11 +200,16 @@ button{font-family:inherit;}
 .card-visual .card-logo{width:28px; height:28px; color:#FFE3A6; flex-shrink:0;}
 .card-visual .num{letter-spacing:.12em; font-weight:500; color:#FFFFFF;}
 .card-visual .row3{display:flex; justify-content:space-between; opacity:.85; color:#FFFFFF;}
-.card-visual.gold{background:linear-gradient(135deg,#FFE3A6,#FFB100 60%,#C07F00); color:#021065;}
-.card-visual.gold .brand{color:#021065;}
-.card-visual.gold .card-logo{color:#021065;}
-.card-visual.gold .num{color:#021065;}
-.card-visual.gold .row3{color:#021065;}
+.card-visual{overflow:hidden;}
+.card-visual.gold{background:
+    radial-gradient(130% 100% at 82% 8%, rgba(255,174,63,.9) 0%, rgba(255,174,63,0) 55%),
+    radial-gradient(130% 110% at 8% 95%, rgba(195,145,67,.85) 0%, rgba(195,145,67,0) 58%),
+    radial-gradient(90% 70% at 50% 45%, rgba(64,120,200,.55) 0%, rgba(64,120,200,0) 70%),
+    linear-gradient(150deg,#2E66C2 0%,#1E50A2 48%,#143A7C 100%);
+  color:#FBF8F3;}
+.card-visual.gold::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");}
+.card-visual.gold .brand,.card-visual.gold .card-logo,.card-visual.gold .num,.card-visual.gold .row3{color:#FBF8F3;}
+.card-visual.gold .row3{opacity:.9;}
 
 .card-dots{display:flex; justify-content:center; align-items:center; gap:6px; padding:12px 0 2px;}
 .dot{width:6px; height:6px; border-radius:var(--shape-full); background:var(--md-outline-variant); cursor:pointer; transition:all .18s;}
@@ -532,11 +537,16 @@ body[data-theme="dark"]{
 }
 body[data-theme="dark"] .phone{box-shadow:0 24px 48px -24px rgba(0,0,0,.6);}
 body[data-theme="dark"] .card-visual{background:linear-gradient(135deg,#021065 0%,#0A1E7A 60%,#1836B5 130%); border:1px solid rgba(255,255,255,.14); box-shadow:0 12px 30px -10px rgba(0,0,0,.8), 0 0 20px -5px rgba(2,16,101,.6);}
-body[data-theme="dark"] .card-visual.gold{background:linear-gradient(135deg,#FFE3A6,#FFB100 60%,#C07F00); color:#021065;}
+body[data-theme="dark"] .card-visual.gold{background:
+    radial-gradient(130% 100% at 82% 8%, rgba(255,174,63,.85) 0%, rgba(255,174,63,0) 55%),
+    radial-gradient(130% 110% at 8% 95%, rgba(195,145,67,.8) 0%, rgba(195,145,67,0) 58%),
+    radial-gradient(90% 70% at 50% 45%, rgba(50,100,180,.5) 0%, rgba(50,100,180,0) 70%),
+    linear-gradient(150deg,#2456AC 0%,#1A448E 48%,#10294F 100%);
+  color:#FBF8F3; border:1px solid rgba(255,255,255,.14);}
 body[data-theme="dark"] .card-visual.gold .brand,
 body[data-theme="dark"] .card-visual.gold .card-logo,
 body[data-theme="dark"] .card-visual.gold .num,
-body[data-theme="dark"] .card-visual.gold .row3{color:#021065; opacity:1;}
+body[data-theme="dark"] .card-visual.gold .row3{color:#FBF8F3; opacity:1;}
 body[data-theme="dark"] .card-visual .row3{opacity:1; color:#D6E0FF;}
 body[data-theme="dark"] .tab{color:#8E99B0;}
 body[data-theme="dark"] .tab.active .nav-indicator{background:rgba(43,88,255,.24); color:#BAC8FF;}
@@ -732,17 +742,17 @@ body[data-theme="dark"] :focus-visible{outline:2px solid var(--md-primary); outl
             <div class="card-carousel-wrap" id="cardCarouselWrap">
               <div class="card-carousel" id="cardCarousel">
                 <div class="card-slide">
-                  <div class="card-visual body-m">
-                    <div class="row1"><span class="brand label-m">کارت شخصی</span><svg class="card-logo" aria-hidden="true"><use href="#i-home-filled"/></svg></div>
-                    <div class="num title-l"><bdi>••••  ••••  ••••  4471</bdi></div>
-                    <div class="row3 label-s"><span>علی رضایی</span><span><bdi>08/29</bdi></span></div>
-                  </div>
-                </div>
-                <div class="card-slide">
                   <div class="card-visual gold body-m">
                     <div class="row1"><span class="brand label-m">کارت پشتوانه طلا/کریپتو</span><svg class="card-logo" aria-hidden="true"><use href="#i-home-filled"/></svg></div>
                     <div class="num title-l"><bdi>••••  ••••  ••••  9203</bdi></div>
                     <div class="row3 label-s"><span id="backedCardSub">موجودی پشتوانه: طلا + کریپتو</span><span><bdi>--/--</bdi></span></div>
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="card-visual body-m">
+                    <div class="row1"><span class="brand label-m">کارت شخصی</span><svg class="card-logo" aria-hidden="true"><use href="#i-home-filled"/></svg></div>
+                    <div class="num title-l"><bdi>••••  ••••  ••••  4471</bdi></div>
+                    <div class="row3 label-s"><span>علی رضایی</span><span><bdi>08/29</bdi></span></div>
                   </div>
                 </div>
               </div>
@@ -1075,21 +1085,13 @@ body[data-theme="dark"] :focus-visible{outline:2px solid var(--md-primary); outl
           </div>
         </div>
 
-        <!-- account switcher sheet -->
+        <!-- account switcher sheet (accounts + new account types, merged) -->
         <div class="sheet-backdrop" id="sheetBackdrop"></div>
         <div class="sheet" id="accountSheet">
           <div class="handle"></div>
           <h4 class="title-s">سوییچ حساب</h4>
           <div class="sheet-row"><span class="avatar"><svg class="icon"><use href="#i-user"/></svg></span><span class="name body-l">شخصی</span></div>
-          <div class="sheet-add state" id="addAccountBtn" role="button" tabindex="0"><span class="avatar"><svg class="icon"><use href="#i-plus"/></svg></span><span class="name body-l">افزودن حساب</span></div>
-        </div>
-
-        <!-- account type picker sheet -->
-        <div class="sheet-backdrop" id="accountTypeBackdrop"></div>
-        <div class="sheet" id="accountTypeSheet">
-          <div class="handle"></div>
-          <h4 class="title-s">چه حسابی می‌خوای ایجاد کنی؟</h4>
-          <p class="body-s sheet-desc">نوع حساب جدیدت رو انتخاب کن.</p>
+          <h4 class="title-s" style="margin-top:10px;">حساب جدید</h4>
           <div class="sheet-row state" id="newBusinessAccount"><span class="avatar"><svg class="icon"><use href="#i-briefcase"/></svg></span><span class="sheet-text"><span class="name body-l">حساب بیزینس (حقوقی)</span><span class="sub body-s">برای کسب‌وکارها و اشخاص حقوقی</span></span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
           <div class="sheet-row state" id="newFamilyAccount"><span class="avatar"><svg class="icon"><use href="#i-family"/></svg></span><span class="sheet-text"><span class="name body-l">حساب خانواده</span><span class="sub body-s">مدیریت مشترک دارایی با اعضای خانواده</span></span><svg class="chev"><use href="#i-arrow-l"/></svg></div>
         </div>
@@ -1514,8 +1516,8 @@ const cardNextBtn = document.getElementById('cardNextBtn');
 function updateCard(){
   cardCarousel.style.transform = `translateX(${cardIndex===0 ? '0%' : '-100%'})`;
   cardDots.forEach((d,i)=> d.classList.toggle('active', i===cardIndex));
-  cardLinkedNote.classList.toggle('show', cardIndex===1);
-  document.getElementById('cardBackingStrip').classList.toggle('show', cardIndex===1);
+  cardLinkedNote.classList.toggle('show', cardIndex===0);
+  document.getElementById('cardBackingStrip').classList.toggle('show', cardIndex===0);
   cardPrevBtn.classList.toggle('disabled', cardIndex===0);
   cardNextBtn.classList.toggle('disabled', cardIndex===1);
 }
@@ -2097,19 +2099,10 @@ document.getElementById('openAccountSheet').addEventListener('click', ()=>{
 });
 backdrop.addEventListener('click', ()=>{ sheet.classList.remove('show'); backdrop.classList.remove('show'); });
 
-/* ---- account type picker sheet ---- */
-const accountTypeSheet = document.getElementById('accountTypeSheet');
-const accountTypeBackdrop = document.getElementById('accountTypeBackdrop');
-document.getElementById('addAccountBtn').addEventListener('click', ()=>{
-  sheet.classList.remove('show'); backdrop.classList.remove('show');
-  accountTypeSheet.classList.add('show'); accountTypeBackdrop.classList.add('show');
-});
-accountTypeBackdrop.addEventListener('click', ()=>{
-  accountTypeSheet.classList.remove('show'); accountTypeBackdrop.classList.remove('show');
-});
+/* ---- new account types (merged into the same account sheet) ---- */
 ['newBusinessAccount','newFamilyAccount'].forEach(id=>{
   document.getElementById(id).addEventListener('click', ()=>{
-    accountTypeSheet.classList.remove('show'); accountTypeBackdrop.classList.remove('show');
+    sheet.classList.remove('show'); backdrop.classList.remove('show');
   });
 });
 
